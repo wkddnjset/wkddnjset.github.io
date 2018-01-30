@@ -47,7 +47,8 @@
 }
 
 .post-toc .nav .active > a {
-  color: $toc-link-active-color;
+  color: #f9f9f9;
+  border-bottom:none;
   border-bottom-color: $toc-link-active-border-color;
 }
 
