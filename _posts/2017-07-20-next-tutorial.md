@@ -9,7 +9,7 @@ tags:
 ## 카페24에서 Node.js 서버 구매
 
 * Desktop
-![Cafe24 Node.js 호스팅](../images/2018-01-30/cafe24_01.png)
+![Cafe24 Node.js 호스팅](https://github.com/wkddnjset/wkddnjset.github.io/blob/master/_posts/images/2018-01-30/cafe24_01.png)
 
 * Sidebar
 
