@@ -56,7 +56,7 @@
             {% assign tmp = num_array | slice: first_level, 7 %}
             {% capture number %}{% for i in tmp %}.{{i}}{% endfor %}{% endcapture %}
             {% assign number = number | strip | remove_first: '.' %}
-            <span class="{{ class }}-number">{{ number }}</span>
+            <span class="{{ class }}-number">{{ number }}. </span>
           {% endif %}
           <span class="{{ class }}-text">{{ toc_title }}</span>
         </a>
