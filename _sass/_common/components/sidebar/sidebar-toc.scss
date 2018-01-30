@@ -22,6 +22,7 @@
     transition-property: all;
     color: $toc-link-color;
     border-bottom-color: $toc-link-border-color;
+    border-bottom: none;
 
     &:hover {
       color: $toc-link-hover-color;
@@ -47,7 +48,7 @@
 }
 
 .post-toc .nav .active > a {
-  color: #f9f9f9;
+  color: #f9f9f9 !important;
   border-bottom:none;
 }
 
