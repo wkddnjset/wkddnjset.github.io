@@ -2,11 +2,10 @@
   margin-top: 50px;
 
   .btn {
-    border-radius: 3px;
+    border-radius: 3px !important;
     color: $read-more-color;
     font-size: $read-more-font-size;
     background: $read-more-bg-color;
-    border-radius: $read-more-border-radius;
     line-height: 2;
     margin: 0 4px 8px 4px;
   }
