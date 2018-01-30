@@ -6,16 +6,10 @@ categories:
 tags:
 ---
 
-> NexT is a high quality elegant [Jekyll](https://jekyllrb.com) theme ported from [Hexo Next](https://github.com/iissnan/hexo-theme-next). It is crafted from scratch, with love.
-
-<!-- more -->
-
-[Live Preview](http://simpleyyt.github.io/jekyll-theme-next/)
-
-## Screenshots
+## 카페24에서 Node.js 서버 구매
 
 * Desktop
-![Desktop Preview](http://iissnan.com/nexus/next/desktop-preview.png)
+![Cafe24 Node.js 호스팅](../images/2018-01-30/cafe24_01.png)
 
 * Sidebar
 
