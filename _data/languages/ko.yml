@@ -61,7 +61,7 @@ counter:
   archive_posts:
     zero: 포스트 없음
     one: 1개의 포스트
-    other: "총 %d개의 글"
+    other: "총 %d개의 글이 있습니다."
 
 state:
   posts: 포스트
@@ -70,7 +70,7 @@ state:
   categories: 카테고리
 
 cheers:
-  um: 반갑습니다!
+  um: 반갑습니다
   ok: OK
   nice: 잘했어요
   good: 좋아요
