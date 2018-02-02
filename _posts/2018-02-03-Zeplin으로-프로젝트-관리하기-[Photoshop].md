@@ -78,7 +78,8 @@ Import할 대지를 선택하고 다음 버튼을 눌러주세요!!
 
 다시 재플린 앱을 보면 업데이트가 되면서 업로드 된것을 확인할 수 있습니다.
 
-![zeplin-14](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/check_02.png)
+![zeplin-15](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/check_02.png)
 
-재플린에서 알아서 수치를 재주는거 보세요..아름답습니다.
+재플린에서 알아서 수치를 재주는거 보세요..아름답지않나요^^
+근데 아트보드 이름이 그대로 들어가서 대지1로 되네요ㅠㅠ 바꿔야징ㅎㅎ
 
