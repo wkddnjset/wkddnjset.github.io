@@ -56,7 +56,7 @@ tags: photoshop, zeplin
 
 > Zeplin에 가입되어있는 사람들을 초대할 수 있습니다. 프로젝트 링크를 공유하면 누구나 웹에서도 간편하게 확인할 수 있어서 정말 편리합니다!!!
 
-## Photoshop에서 Export하기
+## Photoshop에서 Zeplin으로 Import하기
 
 ![zeplin-11](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/up_load_01.png)
 
