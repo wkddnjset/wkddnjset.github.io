@@ -11,15 +11,15 @@ tags: photoshop, zeplin
 
 ![zeplin-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/sign_up_01.png)
 
-[[홈페이지](https://zeplin.io/)]에 가신 다음 회원가입 또는 로그인을 해주세요.
+[[홈페이지](https://zeplin.io/)]에 가서 회원가입 또는 로그인을 해주세요.
 
 ![zeplin-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/sign_up_02.png)
 
-완전 간단하네요!! **It's free!** 입니다 ㅎㅎ
+회원가입이 완전 간단하네요!! 게다가 **"It's free!"** 입니다 ㅎㅎ
 
 ![zeplin-03](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/download_01.png)
 
-오..바로 프로그램을 설치하라고 뜨네요. 저는 윈도우로 진행하기 때문에 **스케치**로는 진행이 안됩니다 ㅠㅠ 우선 앱을 다운받아주세욤~~
+오..바로 프로그램을 설치하라고 뜨네요. 저는 윈도우로 진행하기 때문에 **스케치**로는 진행이 안됩니다 ㅠㅠ 아쉽지만 윈도우버전으로 앱을 다운받겠습니다~~
 
 ## Zeplin 프로그램 설치
 
@@ -39,15 +39,16 @@ tags: photoshop, zeplin
 
 ![zeplin-07](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/login_01.png)
 
-**Zeplin**을 실행시켜 로그인합니다!
+이제 **Zeplin**을 실행시켜 로그인합니다!
 
 ![zeplin-08](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/create_02.png)
 
-오..새로운 프로젝트를 생성합니다.
+**Create my first Project** 버튼을 눌러 새로운 프로젝트를 생성합니다.
+> 재플린은 프로젝트 하나만 무료고 하나 이상부터는 돈을 내야하는거 같아요 ㅠㅠ
 
 ![zeplin-09](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/create_03.png)
 
-자.. 저는 윈도우니깐 ㅠㅠ **Android**로 디자인 해보도록하겠습니다. 윈도우에서는 **ios** 개발이 안되니깐요 ㅠㅠ
+이제 어떤 프로젝트인지 설정하는 부분이네요!! 저는 **Android**프로젝트로 해보도록하겠습니다. 윈도우에서는 **ios** 개발이 안되니깐요 ㅠㅠ
 
 ![zeplin-10](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/create_04.png)
 
