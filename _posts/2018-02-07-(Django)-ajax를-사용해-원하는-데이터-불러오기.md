@@ -91,26 +91,7 @@ urlpatterns = [
 
 ### lone_list.html
 
-{% highlight html linenos %}
-<table>
-    <tr>
-        ...
-        <th>회수금<th>
-    </tr>
-    <!-- {% for obj in Lone_data %} -->
-    <tr>
-        <td id="{{ obj.id }}_lone_id">{{ obj.id }}</td>
-        <td>{{ obj.user_id.last_name }}{{ obj.user_id.first_name }}</td>
-        <td>{{ obj.attention }}</td>
-        <td>{{ obj.price }}</td>
-        <td id="{{ obj.id }}_payback"></td>
-    </tr>
-    <script type="text/javascript">
-    ...
-    </script>
-    <!-- {% endfor %} -->
-</table>
-{% endhighlight %}
+![django-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-07/django.png)
 
 **ID 값**과 **회수금 값**이 들어있는 `td태그`는 id를 만들어서 jQuery에서 해당 값에 대한 정보를 읽거나 쓸수 있도록 만들어줍니다.
 
