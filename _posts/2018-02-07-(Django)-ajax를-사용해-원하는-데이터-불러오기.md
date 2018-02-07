@@ -95,7 +95,7 @@ urlpatterns = [
 <table>
     <tr>
         ...
-        <th>회수금<th>
+        <th>회수금1<th>
     </tr>
     {% for obj in Lone_data %}
     <tr>
