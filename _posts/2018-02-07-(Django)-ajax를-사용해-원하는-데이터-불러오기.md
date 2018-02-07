@@ -91,7 +91,7 @@ urlpatterns = [
 
 ### lone_list.html
 
-{% highlight html linenos %}
+{% highlight javascript linenos %}
 <table>
     <tr>
         ...
