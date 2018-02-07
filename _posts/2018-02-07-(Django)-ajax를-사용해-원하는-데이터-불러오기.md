@@ -9,7 +9,7 @@ tags: django, develop, backend
 
 ## 저는 이럴때 Ajax를 사용합니다.
 
-특정 기능을 구현할때, Ajax를 사용해야 하는지, Django로도 충분히 구현이 가능한지 여부에 대해서는 저도 자세하게 알지 못합니다ㅠ 다만 제가 Ajax를 사용할 때는 이럴때입니다.
+특정 기능을 구현할때, ***Ajax***를 사용해야 하는지, Django로도 충분히 구현이 가능한지 여부에 대해서는 저도 자세하게 알지 못합니다ㅠ 다만 제가 ***Ajax***를 사용할 때는 이럴때입니다.
 
 ### 대출과 회수의 관계
 
@@ -26,7 +26,7 @@ tags: django, develop, backend
 	- 대출모델 ID (ForeignKey)
 	- 회수금
 
-위 테이블에서 보시면 회수 테이블은 대출 테이블의 ID를 갖고 있기 때문에 템플릿에서 ORM을 사용해 대출 테이블에 접근을 할 수 있습니다. 근데 만약 대출 테이블의 값을 템플릿으로 넘겨줬을떈.. 해당 테이블의 ID 값에 따라 회수 모테이블을 가져오고 싶을 떄!!! 바로 이런 상황에서 저는 Ajax를 사용합니다.
+위 테이블에서 보시면 **회수 테이블**은 **대출 테이블**의 `ID`를 갖고 있기 때문에 템플릿에서 템플릿태그를 사용해 대출 테이블에 접근을 할 수 있습니다. 근데 만약 **대출 테이블**을 템플릿으로 넘겨주면 **회수 테이블**에 접근하기 까다롭습니다. 바로 이런 상황에서 저는 ***Ajax***를 사용합니다.
 
 |    ID      |     사용자ID  	 |  상태     |   대출금  	 |    회수금	  |
 |:----------:|:-------------:|:--------:|:----------:|:----------:|
@@ -35,4 +35,26 @@ tags: django, develop, backend
 | 3   		 | 	   홍길동		 |  회수완료	|  1,000,000 |			  |		
 
 
-이런 테이블을 사용자에게 보여준다고 가정해 봅시다. 현재 입력되어있는 ID, 사용자ID, 상태, 대출금은 대출 테이블에서 가져올 수 있는 정보입니다. 하지만 여기서 회수금 부분은 대출 모
+이런 테이블을 사용자에게 보여준다고 가정해 봅시다. 현재 입력되어있는 **ID**, **사용자ID**, **상태**, **대출금**은 **대출 테이블**에서 가져올 수 있는 정보입니다. 하지만 여기서 회수금은 대출 테이블에 없는 정보이기에 ***Ajax***를 사용하는겁니다!
+
+> 물론 ***Ajax***말고 다양한 방법으로 해결할 수 있습니다. 아마도...
+
+## Ajax 사용하기
+
+### views.py
+
+{% highlight python linenos %}
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from .models import Payback
+
+def PaybackAjax(request, pk):
+    object = get_object_or_404(Payback, pk=pk)
+
+    data = {
+        'id'          : Payback.id,
+        'lone_id'     : Payback.lone_id,
+        'payback'     : Payback.payback,
+    }
+    return JsonResponse(data)
+{% endhighlight %}
