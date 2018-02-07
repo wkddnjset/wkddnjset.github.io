@@ -11,7 +11,7 @@ tags: django, develop, backend
 
 특정 기능을 구현할때, ***Ajax***를 사용해야 하는지, Django로도 충분히 구현이 가능한지 여부에 대해서는 저도 자세하게 알지 못합니다ㅠ 다만 제가 ***Ajax***를 사용할 때는 이럴때입니다.
 
-### 대출과 회수의 관계
+### 예시
 
 저번에 사용했던 테이블로 예를 들어보도록 하겠습니다. 
 
@@ -58,3 +58,20 @@ def PaybackAjax(request, pk):
     }
     return JsonResponse(data)
 {% endhighlight %}
+
+**Ajax**를 사용하기 위해서 데이터를 **Json**형태로 출력해주는 함수를 만듭니다!
+
+### urls.py
+
+{% highlight python linenos %}
+from django.conf.urls import url
+from .views import PaybackAjax
+
+urlpatterns = [
+    url(r'ajax/payback/(?P<pk>[\w-]+)/$', PaybackAjax, name='payback')
+]
+{% endhighlight %}
+
+**urls.py**에 **pk**에 따라 해당 데이터를 불러 올 수 있도록!! 다음과 같이 입력해주세요~
+
+### urls.py
