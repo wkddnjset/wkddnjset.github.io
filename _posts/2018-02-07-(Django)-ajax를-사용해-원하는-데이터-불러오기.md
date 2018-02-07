@@ -37,16 +37,27 @@ tags: django, develop, backend
 
 이런 테이블을 사용자에게 보여준다고 가정해 봅시다. 현재 입력되어있는 **ID**, **사용자ID**, **상태**, **대출금**은 **대출 테이블**에서 가져올 수 있는 정보입니다. 하지만 여기서 회수금은 대출 테이블에 없는 정보이기에 ***Ajax***를 사용하는겁니다!
 
-> 물론 ***Ajax***말고 다양한 방법으로 해결할 수 있습니다. 아마도...
+> 물론 ***Ajax***말고 다양한 방법으로 해결할 수 있습니다.
 
 ## Ajax 사용하기
 
 ### views.py
 
 {% highlight python linenos %}
+from django.views.generic import ListView
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
-from .models import Payback
+from .models import Lone, Payback
+
+def LoneListView(request):
+    template = 'lone_list.html'
+    Lone_data = Lone.objects.all()
+    Payback_data = Payback.objects.all()
+
+    return render(request, template, {
+        'Lone_data': Lone_data,
+        'Payback_data': Payback_data,
+    })
 
 def PaybackAjax(request, pk):
     object = get_object_or_404(Payback, pk=pk)
@@ -59,19 +70,84 @@ def PaybackAjax(request, pk):
     return JsonResponse(data)
 {% endhighlight %}
 
-**Ajax**를 사용하기 위해서 데이터를 **Json**형태로 출력해주는 함수를 만듭니다!
+**LoneListView**는 템플릿에 테이블을 출력하기 위한 함수로 **대출 테이블** 전체와 **회수 테이블** 전체의 데이터를 보내고 있습니다.
+**PaybackAjax**는 **Ajax**를 사용하기 위해서 데이터를 **Json**형태로 출력해주는 함수를 입니다!
+
+> **Ajax**로 하지않고 **LoneListView**에서 **회수테이블**의 데이터만 보낸 다음 해당값을 **jQuery**로 받아서 뿌려줘도 동일한 결과를 얻을 수 있을 것 같습니다.
 
 ### urls.py
 
 {% highlight python linenos %}
 from django.conf.urls import url
-from .views import PaybackAjax
+from .views import LoneListView, PaybackAjax
 
 urlpatterns = [
-    url(r'ajax/payback/(?P<pk>[\w-]+)/$', PaybackAjax, name='payback')
+    url(r'ajax/payback/(?P<pk>[\w-]+)/$', PaybackAjax, name='payback'),
+    url(r'lone/$', LoneListView, name='lone-list'),
 ]
 {% endhighlight %}
 
 **urls.py**에 **pk**에 따라 해당 데이터를 불러 올 수 있도록!! 다음과 같이 입력해주세요~
 
-### urls.py
+### lone_list.html
+
+{% highlight html linenos %}
+<table>
+    <tr>
+        ...
+        <th>회수금<th>
+    </tr>
+    {% for obj in Lone_data %}
+    <tr>
+        <td id="{{ obj.id }}_lone_id">{{ obj.id }}</td>
+        <td>{{ obj.user_id.last_name }}{{ obj.user_id.first_name }}</td>
+        <td>{{ obj.attention }}</td>
+        <td>{{ obj.price }}</td>
+        <td id="{{ obj.id }}_payback"></td>
+    </tr>
+    <script type="text/javascript">
+    ...
+    </script>
+    {% endfor %}
+</table>
+{% endhighlight %}
+
+**ID 값**과 **회수금 값**이 들어있는 `td태그`는 id를 만들어서 jQuery에서 해당 값에 대한 정보를 읽거나 쓸수 있도록 만들어줍니다.
+
+### lone_list.html/script
+
+{% highlight javascript linenos %}
+<script>
+    $(document).ready(function() {
+        var lone_id = $("#{{ obj.id }}_lone_id").text();
+        var list = {{ Payback_id }};
+        for (var i = 0; i < list.length; i++){
+            /* ajax로 url에 뿌려진 Json 데이터를 불러옵니다 */
+            $.ajax({
+                url : "main/ajax/payback/"+list[i],
+                datatype: 'json',
+                success:function (data){
+                    /* Json에서의 lone_id와 테이블상의 lone_id 동일여부 확인 */
+                    if (data.lone_id == lone_id) {
+                        var current = $('#'+lone_id+'_payback').text();
+                        /* 테이블에서 회수금필드의 값이 null일 경우 0으로 대체 */
+                        if (current == ''){
+                            current = 0;
+                            $('#'+lone_id+'_payback').text(data.payback);
+                        }
+                        /* 0이 아닐경우 현재 값과 데이터의 payback값을 더함 */
+                        else{
+                            current = $('#'+lone_id+'_payback').text();
+                            $('#'+lone_id+'_payback').text(parseInt(current)+parseInt(data.payback));
+                        }
+                    }
+                }
+            });
+        }
+     });
+</script>
+{% endhighlight %}
+
+좀 복잡할 수 있지만 **url**을 통해서 **json** 형태의 데이터를 파싱해오고 해당 데이터를 jQuery에서 가공한 다음 뿌려주는 방식입니다.
+
+> jQuery를 사용하기 위해서는 **html 헤드** 부분에 **CDN**을 추가해야 합니다.
