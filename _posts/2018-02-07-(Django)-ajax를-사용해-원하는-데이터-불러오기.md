@@ -132,3 +132,7 @@ urlpatterns = [
 좀 복잡할 수 있지만 **url**을 통해서 **json** 형태의 데이터를 파싱해오고 해당 데이터를 jQuery에서 가공한 다음 뿌려주는 방식입니다.
 
 > jQuery를 사용하기 위해서는 **html 헤드** 부분에 **CDN**을 추가해야 합니다.
+
+## Github
+
+- [[Github Django에서 Ajax 사용하기 소스코드](https://github.com/wkddnjset/django-ajax)]
