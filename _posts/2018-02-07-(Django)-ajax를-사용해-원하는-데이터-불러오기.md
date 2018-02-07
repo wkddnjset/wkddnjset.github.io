@@ -97,7 +97,7 @@ urlpatterns = [
         ...
         <th>회수금<th>
     </tr>
-    {% for obj in Lone_data %}
+    <!-- {% for obj in Lone_data %} -->
     <tr>
         <td id="{{ obj.id }}_lone_id">{{ obj.id }}</td>
         <td>{{ obj.user_id.last_name }}{{ obj.user_id.first_name }}</td>
@@ -108,7 +108,7 @@ urlpatterns = [
     <script type="text/javascript">
     ...
     </script>
-    {% endfor %}
+    <!-- {% endfor %} -->
 </table>
 {% endhighlight %}
 
