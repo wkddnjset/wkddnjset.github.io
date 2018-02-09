@@ -49,6 +49,7 @@ tags: photoshop, zeplin
 ![zeplin-09](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/create_03.png)
 
 이제 어떤 프로젝트인지 설정하는 부분이네요!! 저는 **Android**프로젝트로 해보도록하겠습니다. 윈도우에서는 **ios** 개발이 안되니깐요 ㅠㅠ
+> 만약 하이브리드 앱일 경우 **Android**가 아닌 **Web**으로 프로젝트를 만들어주세요!! 
 
 ![zeplin-10](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-03/create_04.png)
 
