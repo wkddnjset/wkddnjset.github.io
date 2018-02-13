@@ -4,7 +4,7 @@ comments: true
 description: 상품정보의 이미지, 타이틀, 서브타이트르이 데이터를 갖고 있는 API를 Django로 만들어서 ionic과 연동 해보도록 하겠습니다.
 categories:
  - MiniProject/TourPlan
-tags: django, app, develop, beckend
+tags: django, app, develop, backend, api
 ---
 
 ## 이전 내용
