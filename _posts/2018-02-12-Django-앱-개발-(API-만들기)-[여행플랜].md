@@ -74,8 +74,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 |    ID      |     이미지url   |     타이틀     |   서브타이틀     |
 |:----------:|:-------------:|:------------:|:-------------:|
-| 1          |               |              |               |
-| 2          |               |              |               |
-| 3          |               |              |               |
+| 1          |   http://...  | Souel, Korea |     text      |
+| 2          |   http://...  | Tokoy, Japan |     text      |
+| 3          |   http://...  |      ...     |     text      |
 
 
