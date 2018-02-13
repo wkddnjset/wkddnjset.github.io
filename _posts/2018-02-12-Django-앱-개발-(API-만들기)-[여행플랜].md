@@ -25,9 +25,57 @@ tags: django, app, develop, beckend
 ## 설치
 
 {% highlight bash linenos %}
-(Tourplan_Django) C:\Users\wk647\Desktop\Tourplan_Django> pip install Django==1.11
-(Tourplan_Django) C:\Users\wk647\Desktop\Tourplan_Django> pip install django-cors-headers==2.1.0
-(Tourplan_Django) C:\Users\wk647\Desktop\Tourplan_Django> pip install django-rest-framework==0.1.0
+C:\Users\wk647\Desktop\Tourplan_Django> pip install Django==1.11
+C:\Users\wk647\Desktop\Tourplan_Django> pip install django-cors-headers==2.1.0
+C:\Users\wk647\Desktop\Tourplan_Django> pip install django-rest-framework==0.1.0
 {% endhighlight %}
 
 **API**를 만들기 위해서 **Django-Rest-Framework**를 설치합니다. `django-cors-headers`는 **ionic**과 **django**를 동시에 로컬에서 돌리면서 **http request**를 하기 위해서 보안으로 인해 접근이 중단되는 것을 막아주는 라이브러리 입니다.
+
+## 프로젝트 생성 및 설정
+
+{% highlight bash linenos %}
+C:\Users\wk647\Desktop\Tourplan_Django> mkdir src && cd src
+C:\Users\wk647\Desktop\Tourplan_Django\src> django-admin startproject Tourplan .
+{% endhighlight %}
+
+**src**라는 폴더를 생성하고 해당 위치에 **Tourplan**이라는 프로젝트를 생성합니다.
+
+{% highlight bash linenos %}
+C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py startapp Product
+{% endhighlight %}
+
+**Product**라는 애플리케이션을 만듭니다.
+
+### Tourplan/settings.py
+
+{% highlight python linenos %}
+INSTALLED_APPS = [
+    ...
+    'corsheaders',
+    'Product',
+    'rest_framework',
+]
+MIDDLEWARE = [
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+CORS_URLS_REGEX = r'^/api/.*$'
+CORS_ORIGIN_ALLOW_ALL = True
+{% endhighlight %}
+
+**settings.py**에 생성한 앱과 라이브러리들을 등록하고, **CORS**세팅을 해줍니다.
+
+> [[미들웨어에 대한 자세한 설명](http://uiandwe.tistory.com/1160)]을 참고하세요!
+
+
+### Product/models.py
+
+|    ID      |     이미지url   |     타이틀     |   서브타이틀     |
+|:----------:|:-------------:|:------------:|:-------------:|
+| 1          |               |              |               |
+| 2          |               |              |               |
+| 3          |               |              |               |
+
+
