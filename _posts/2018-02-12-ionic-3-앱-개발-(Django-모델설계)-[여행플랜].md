@@ -84,7 +84,9 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py makemigrations
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py migrate
 {% endhighlight %}
 
-**ImageField**를 migrate하기 위해서는 Python 이미지 라이브러리인 **Pillow**를 설치해야 합니다.
+**라이브러리** 설치 후 위 명령을 실행시켜 **DB**를 생성합니다.
+
+>**ImageField**를 migrate하기 위해서는 Python 이미지 라이브러리인 **Pillow**를 설치해야 합니다.
 
 ### Product/admin.py
 
@@ -103,7 +105,7 @@ admin.site.register(ProductList, ProductListAdmin)
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py runserver
 {% endhighlight %}
 
-**Django**를 로컬서버로 실행시킵니다.
+**Django**를 실행합니다.
 
 ![admin-page-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_01.png)
 
