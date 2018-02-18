@@ -122,3 +122,13 @@ admin.site.register(ProductList, ProductListAdmin)
 {% endhighlight %}
 
 **관리자 페이지**에서 해당 모델을 관리할 수 있도록 **admin.py**를 수정해줍시다.
+
+{% highlight bash linenos %}
+C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py runserver
+{% endhighlight %}
+
+![admin-page-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_01.png)
+
+관지라 페이지에 로그인하게 되면, **Product lists**를 통해 아래 그림과 같이 이미지 파일을 추가할 수 있는 페이지를 볼 수 있습니다. 
+
+![admin-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_02.png)
