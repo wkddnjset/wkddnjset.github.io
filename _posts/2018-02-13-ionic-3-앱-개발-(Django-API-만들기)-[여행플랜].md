@@ -18,4 +18,4 @@ tags: django app develop backend api
 - - [[ionic 3 앱 개발 (Django 모델설계) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/12/Django-%EC%95%B1-%EA%B0%9C%EB%B0%9C-(Django-%EB%AA%A8%EB%8D%B8%EC%84%A4%EA%B3%84)-%EC%97%AC%ED%96%89%ED%94%8C%EB%9E%9C/)]
 - [[Github 전체 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 
-저번 시간에 만든 모델과 Django Rest Framework를 이용해 API를 만들어보도록 하겠습니다.
+저번 시간에 만든 모델과 **Django Rest Framework**를 이용해 **API**를 만들어보도록 하겠습니다.
