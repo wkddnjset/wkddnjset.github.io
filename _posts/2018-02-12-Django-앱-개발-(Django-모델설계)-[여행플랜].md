@@ -107,3 +107,5 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> pip install pillow
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py makemigrations
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py migrate
 {% endhighlight %}
+
+**ImageField**를 migrate하기 위해서는 Python 이미지 라이브러리인 **Pillow**를 설치해야 합니다.
