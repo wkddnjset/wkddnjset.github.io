@@ -150,7 +150,10 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 ![image-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/image_page_01.png)
 
-이미지를 관리자페이지에서 등록 후 아래와 같은 URL로 들어가면 해당 이미지를 불러올 수 있습니다.
+이미지를 **관리자 페이지**에서 등록 후 아래와 같은 URL로 들어가면 해당 이미지를 불러올 수 있습니다.
 
 > **http://localhost/media/[이미지파일명]**
 
+## 다음 내용
+
+- [[ionic 3 앱 개발 (Django API 만들기) 포스팅](https://wkddnjset.github.io/2018/02/13/ionic-3-앱-개발-(Django-API-만들기)-여행플랜/)]
