@@ -19,3 +19,34 @@ tags: django app develop backend api
 - [[Github 전체 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 
 저번 시간에 만든 모델과 **Django Rest Framework**를 이용해 **API**를 만들어보도록 하겠습니다.
+
+## 설치 및 설정
+
+{% highlight bash linenos %}
+C:\Users\wk647\Desktop\Tourplan_Django> pip install django-cors-headers==2.1.0
+C:\Users\wk647\Desktop\Tourplan_Django> pip install django-rest-framework==0.1.0
+{% endhighlight %}
+
+**API**를 만들기 위해서 **Django-Rest-Framework**를 설치합니다. `django-cors-headers`는 **ionic**과 **django**를 동시에 로컬에서 돌리면서 **http request**를 하기 위해서 보안으로 인해 접근이 중단되는 것을 막아주는 라이브러리 입니다.
+
+### Tourplan/settings.py
+
+{% highlight python linenos %}
+INSTALLED_APPS = [
+    ...
+    'corsheaders',
+    'Product',
+    'rest_framework',
+]
+MIDDLEWARE = [
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+CORS_URLS_REGEX = r'^/api/.*$'
+CORS_ORIGIN_ALLOW_ALL = True
+{% endhighlight %}
+
+**settings.py**에 생성한 앱과 라이브러리들을 등록하고, **CORS**세팅을 해줍니다.
+
+> [[미들웨어에 대한 자세한 설명](http://uiandwe.tistory.com/1160)]을 참고하세요!

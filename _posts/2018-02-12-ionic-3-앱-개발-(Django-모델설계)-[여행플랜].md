@@ -26,11 +26,9 @@ tags: django app develop backend api
 
 {% highlight bash linenos %}
 C:\Users\wk647\Desktop\Tourplan_Django> pip install Django==1.11
-C:\Users\wk647\Desktop\Tourplan_Django> pip install django-cors-headers==2.1.0
-C:\Users\wk647\Desktop\Tourplan_Django> pip install django-rest-framework==0.1.0
 {% endhighlight %}
 
-**API**를 만들기 위해서 **Django-Rest-Framework**를 설치합니다. `django-cors-headers`는 **ionic**과 **django**를 동시에 로컬에서 돌리면서 **http request**를 하기 위해서 보안으로 인해 접근이 중단되는 것을 막아주는 라이브러리 입니다.
+ **django**를 설치합니다. 저는 1.11버전을 사용했습니다.
 
 ## 프로젝트 생성 및 설정
 
@@ -47,36 +45,12 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py startapp Product
 
 **Product**라는 애플리케이션을 만듭니다.
 
-### Tourplan/settings.py
-
-{% highlight python linenos %}
-INSTALLED_APPS = [
-    ...
-    'corsheaders',
-    'Product',
-    'rest_framework',
-]
-MIDDLEWARE = [
-    ...
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-]
-CORS_URLS_REGEX = r'^/api/.*$'
-CORS_ORIGIN_ALLOW_ALL = True
-{% endhighlight %}
-
-**settings.py**에 생성한 앱과 라이브러리들을 등록하고, **CORS**세팅을 해줍니다.
-
-> [[미들웨어에 대한 자세한 설명](http://uiandwe.tistory.com/1160)]을 참고하세요!
-
 {% highlight python linenos %}
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 {% endhighlight %}
 
-추가로 저희는 이미지 정보를 갖고 있는 모델을 만들기 위해 미디어 파일을 저장할 경로를 지정해주는 **MEDIA_ROOT**와 각 미디어 파일에 대한 url 경로인 **MEDIA_URL**를 설정해준다.
-
-### Product/models.py
+미디어와 관련된 모델을 만들기 위해 미디어 파일을 저장할 경로를 지정해주는 **MEDIA_ROOT**와 각 미디어 파일에 대한 url 경로인 **MEDIA_URL**를 설정해준다.
 
 |    ID      |     이미지url   |     타이틀     |   서브타이틀     |
 |:----------:|:-------------:|:------------:|:-------------:|
@@ -85,6 +59,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 | 3          |   http://...  |      ...     |     text      |
 
 위와 같은 테이블을 모델로 설계해보도록 하겠습니다.
+
+### Product/models.py
 
 {% highlight python linenos %}
 from django.db import models
