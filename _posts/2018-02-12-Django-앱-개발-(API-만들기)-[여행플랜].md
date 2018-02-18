@@ -70,9 +70,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 > [[미들웨어에 대한 자세한 설명](http://uiandwe.tistory.com/1160)]을 참고하세요!
 
 {% highlight python linenos %}
-# 각 media 파일에 대한 URL Prefix
 MEDIA_URL = '/media/'
-# 업로드된 파일을 저장할 디렉토리 경로
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 {% endhighlight %}
 
