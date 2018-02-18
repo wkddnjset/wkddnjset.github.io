@@ -120,3 +120,5 @@ class ProductListAdmin(admin.ModelAdmin):
 
 admin.site.register(ProductList, ProductListAdmin)
 {% endhighlight %}
+
+**관리자 페이지**에서 해당 모델을 관리할 수 있도록 **admin.py**를 수정해줍시다.
