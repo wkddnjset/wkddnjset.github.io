@@ -134,4 +134,4 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 ## 다음 내용
 
-- [[ionic 3 앱 개발 (Django API 만들기) 포스팅](https://wkddnjset.github.io/2018/02/13/ionic-3-앱-개발-(Django-API-만들기)-여행플랜/)]
+- [[ionic 3 앱 개발 (Django API 만들기) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/13/ionic-3-%EC%95%B1-%EA%B0%9C%EB%B0%9C-(Django-API-%EB%A7%8C%EB%93%A4%EA%B8%B0)-%EC%97%AC%ED%96%89%ED%94%8C%EB%9E%9C/)]
