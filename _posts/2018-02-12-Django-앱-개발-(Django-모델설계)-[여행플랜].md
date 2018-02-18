@@ -109,3 +109,14 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py migrate
 {% endhighlight %}
 
 **ImageField**를 migrate하기 위해서는 Python 이미지 라이브러리인 **Pillow**를 설치해야 합니다.
+
+### Product/admin.py
+
+{% highlight python linenos %}
+from .models import ProductList
+
+class ProductListAdmin(admin.ModelAdmin):
+    list_display = ('id', 'img_url', 'title')
+
+admin.site.register(ProductList, ProductListAdmin)
+{% endhighlight %}
