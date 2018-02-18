@@ -4,7 +4,7 @@ comments: true
 description: 재플린은 디자이너와 개발자가 협업을 쉽게 하도록 도와주는 웹 서비스입니다. 디자인 파일을 재플린에 업로드 하게되면 개발자에 필요한 색상, 픽셀 등 다양한 정보를 제공 해줍니다.
 categories:
  - Photoshop
-tags: photoshop, zeplin
+tags: photoshop zeplin
 ---
 
 ## Zeplin 회원가입 하기

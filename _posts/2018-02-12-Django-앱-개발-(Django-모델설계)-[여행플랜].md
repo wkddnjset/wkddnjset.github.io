@@ -1,10 +1,10 @@
 ---
-title: ionic 3 앱 개발 (API 만들기) - [여행플랜/백엔드]
+title: ionic 3 앱 개발 (Django 모델설계) - [여행플랜/백엔드]
 comments: true
 description: 상품정보의 이미지, 타이틀, 서브타이트르이 데이터를 갖고 있는 API를 Django로 만들어서 ionic과 연동 해보도록 하겠습니다.
 categories:
  - MiniProject/TourPlan
-tags: django, app, develop, backend, api
+tags: django app develop backend api
 ---
 
 ## 이전 내용
@@ -98,6 +98,12 @@ class ProductList(models.Model):
         return str(self.title)
 {% endhighlight %}
 
-id 필드는 설정하지 않아도 자동적으로 AutoField로 생성됩니다. 아래 같이 다른 방법으로도 id 필드를 추가할 수 있습니다.
+**id 필드**는 설정하지 않아도 자동적으로 **AutoField**로 생성됩니다. 아래 같이 다른 방법으로도 **id 필드**를 추가할 수 있습니다.
 
-> id = models.AutoField(primary_key=True)
+> **id = models.AutoField(primary_key=True)**
+
+{% highlight bash linenos %}
+C:\Users\wk647\Desktop\Tourplan_Django\src> pip install pillow
+C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py makemigrations
+C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py migrate
+{% endhighlight %}

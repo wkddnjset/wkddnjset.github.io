@@ -4,7 +4,7 @@ comments: true
 description: Django를 사용해 Json 형태의 데이터를 뿌려주고, 뷰에서 Context로 받아온 데이터 값을 통해 다른 모델에 정보를 템플릿으로 가져오는 방법에 대한 포스팅입니다.
 categories:
  - Django
-tags: django, develop, backend
+tags: django develop backend
 ---
 
 ## 저는 이럴때 Ajax를 사용합니다.
