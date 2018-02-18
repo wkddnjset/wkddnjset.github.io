@@ -1,7 +1,7 @@
 ---
 title: ionic 3 앱 개발 (Django API 만들기) - [여행플랜/백엔드]
 comments: true
-description: 상품정보의 이미지, 타이틀, 서브타이트르이 데이터를 갖고 있는 API를 Django로 만들어서 ionic과 연동 해보도록 하겠습니다.
+description: Django에서 설계한 모델을 ionic에서 연동할 수 있도록 RestFul API를 만들어 보도록 하겠습니다.
 categories:
  - MiniProject/TourPlan
 tags: django app develop backend api
