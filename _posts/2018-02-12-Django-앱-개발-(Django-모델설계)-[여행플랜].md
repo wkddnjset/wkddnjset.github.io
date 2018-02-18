@@ -135,7 +135,7 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py runserver
 
 ![admin-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_02.png)
 
-이미지를 추가해봅시다!
+**관리자 페이지**에서 위와 같이 이미지를 추가할 수 있습니다.
 
 ### Tourplan/urls.py
 
@@ -146,7 +146,7 @@ from django.conf.urls.static import static
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 {% endhighlight %}
 
-Project 폴더에 urls.py에 이미지 경로를 추가합니다.
+**Project** 폴더에 **urls.py**에 이미지 url에 대한 **urlpattern**을 추가합니다.
 
 ![image-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/image_page_01.png)
 
