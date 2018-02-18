@@ -127,8 +127,30 @@ admin.site.register(ProductList, ProductListAdmin)
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py runserver
 {% endhighlight %}
 
+**Django**를 로컬서버로 실행시킵니다.
+
 ![admin-page-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_01.png)
 
-관지라 페이지에 로그인하게 되면, **Product lists**를 통해 아래 그림과 같이 이미지 파일을 추가할 수 있는 페이지를 볼 수 있습니다. 
+**관지라 페이지**에 로그인하게 되면, **Product lists**를 통해 아래 그림과 같이 **이미지 파일**을 추가할 수 있는 페이지를 볼 수 있습니다. 
 
 ![admin-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_02.png)
+
+이미지를 추가해봅시다!
+
+### Tourplan/urls.py
+
+{% highlight python linenos %}
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+{% endhighlight %}
+
+Project 폴더에 urls.py에 이미지 경로를 추가합니다.
+
+![image-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/image_page_01.png)
+
+이미지를 관리자페이지에서 등록 후 아래와 같은 URL로 들어가면 해당 이미지를 불러올 수 있습니다.
+
+> **http://localhost/media/[이미지파일명]**
+
