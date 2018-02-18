@@ -84,4 +84,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 | 2          |   http://...  | Tokoy, Japan |     text      |
 | 3          |   http://...  |      ...     |     text      |
 
+위와 같은 테이블을 모델로 설계해보도록 하겠습니다.
 
+{% highlight python linenos %}
+from django.db import models
+
+class Product(models.Model):
+    img_url       = models.ImageField(blank=True)
+    title       = models.CharField(max_length=100)
+    sub_title    = models.TextField()
+{% endhighlight %}
