@@ -20,7 +20,7 @@ tags: django app develop backend api
 
 ![result-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-11/result_01.gif)
 
-이제 프런트는 완성했습니다! 백엔드와 결합을 하기위해 Restful API를 만들어 보겠습니다.
+이제 프런트는 완성했습니다! API를 만들기 이전에 모델설계를 해보도록하겠습니다.
 
 ## 설치
 
@@ -41,9 +41,10 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> django-admin startproject Tourplan .
 
 {% highlight bash linenos %}
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py startapp Product
+C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py createsuperuser
 {% endhighlight %}
 
-**Product**라는 애플리케이션을 만듭니다.
+**Product**라는 애플리케이션을 만들고, 관리자 아이디를 만듭니다.
 
 {% highlight python linenos %}
 MEDIA_URL = '/media/'
@@ -84,9 +85,9 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py makemigrations
 C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py migrate
 {% endhighlight %}
 
-**라이브러리** 설치 후 위 명령을 실행시켜 **DB**를 생성합니다.
+**라이브러리** 설치 후 마이그레이션 명령을 실행시켜 **DB**를 생성합니다.
 
->**ImageField**를 migrate하기 위해서는 Python 이미지 라이브러리인 **Pillow**를 설치해야 합니다.
+>**ImageField**를 마이그레이션하기 위해서는 Python 이미지 라이브러리인 **Pillow**를 설치해야 합니다.
 
 ### Product/admin.py
 
@@ -109,11 +110,9 @@ C:\Users\wk647\Desktop\Tourplan_Django\src> python manage.py runserver
 
 ![admin-page-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_01.png)
 
-**관지라 페이지**에 로그인하게 되면, **Product lists**를 통해 아래 그림과 같이 **이미지 파일**을 추가할 수 있는 페이지를 볼 수 있습니다. 
+**관리자 페이지**에 로그인하게 되면, **Product lists**를 통해 아래 그림과 같이 **이미지 파일**을 추가할 수 있는 페이지를 볼 수 있습니다. 
 
 ![admin-page-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/admin_page_02.png)
-
-**관리자 페이지**에서 위와 같이 이미지를 추가할 수 있습니다.
 
 ### Tourplan/urls.py
 
