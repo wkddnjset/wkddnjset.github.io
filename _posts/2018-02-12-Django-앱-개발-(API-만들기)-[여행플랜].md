@@ -97,3 +97,7 @@ class ProductList(models.Model):
     def __str__(self):
         return str(self.title)
 {% endhighlight %}
+
+id 필드는 설정하지 않아도 자동적으로 AutoField로 생성됩니다. 아래 같이 다른 방법으로도 id 필드를 추가할 수 있습니다.
+
+> id = models.AutoField(primary_key=True)
