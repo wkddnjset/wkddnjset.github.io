@@ -53,7 +53,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 ## API를 위한 파일 생성하기
 
-{% highlight python linenos %}
+{% highlight bash linenos %}
 |-- Product
 |   |-- api
 |   |   |-- serializer.py
@@ -68,6 +68,78 @@ CORS_ORIGIN_ALLOW_ALL = True
 > **serializer.py** 파일은 DB에 저장된 데이터를 Json 형식으로 변환해주는 역할을 합니다. **urls.py**와 **views.py**는 기존에 **Django**와 비슷하게 활용되어지고 있습니다.
 
 ### api/serializer.py
-### api/urls.py
+
+{% highlight python linenos %}
+from rest_framework import serializers
+from Product.models import ProductList
+
+class ProductListSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = ProductList
+        fields = [
+            'id',
+            'img_url',
+            'title',
+            'sub_title',
+        ]
+{% endhighlight %}
+
+**ProductList**라는 모델에서 **'id'**, **'img_url'**, **'title'**, **'sub_title'** 이라는 필드를 가져와 **Json** 형태로 만들어 줍니다.
+
 ### api/views.py
 
+{% highlight python linenos %}
+from rest_framework import generics
+from Product.models import ProductList
+from .serializers import ProductListSerializers
+
+class ProductListView(generics.ListAPIView):
+    lookup_field = 'id'
+    serializer_class = ProductListSerializers
+
+    def get_queryset(self):
+        return ProductList.objects.all()
+{% endhighlight %}
+
+**Django-Rest_Framework**의 **Generic View** 중 **ListAPIView**를 사용할 것 입니다.
+
+> ListAPIView는 array 타입의 json 형태로 값이 전달되어 집니다.
+
+### Tourplan/urls.py
+
+{% highlight python linenos %}
+from django.conf.urls import url, include
+...
+
+urlpatterns = [
+    ...
+    url(r'^api/', include('Product.api.urls', namespace='api'))
+]
+{% endhighlight %}
+
+프로젝트 폴더인 **Tourplan**에 **urls.py**에 **urlpattern**으로 **api.urls**를 입력합니다.
+
+### api/urls.py
+
+{% highlight python linenos %}
+from .views import ProductListView
+from django.conf.urls import url
+
+urlpatterns = [
+    url(r'^list/$', ProductListView.as_view(), name='product-list'),
+]
+{% endhighlight %}
+
+**API**의 **url**경로를 설정해 줍니다.
+
+> 현재 설정된 경로 : api/list 
+
+### Result
+
+![api-result-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/api_result-01.png)
+
+**Django-Rest-Framework**에서 제공해주는 **Generics View**를 사용하면 **수정**, **조회**, **변경**, **삭제가** 가능한 **API**도 구현 가능합니다.
+
+## 다음 내용
+
+- [[ionic 3 앱 개발 (API 연동하기) 포스팅](https://wkddnjset.github.io/2018/02/14/ionic-3-%EC%95%B1-%EA%B0%9C%EB%B0%9C-(API-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0)-%EC%97%AC%ED%96%89%ED%94%8C%EB%9E%9C/)]
