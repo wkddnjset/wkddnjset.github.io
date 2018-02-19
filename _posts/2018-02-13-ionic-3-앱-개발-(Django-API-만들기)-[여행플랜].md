@@ -60,8 +60,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 |   |   |-- urls.py
 |   |   |-- views.py
 |   |-- migrations
-|   | ...
-|   | ...
+|---
+|...
 {% endhighlight %}
 
 Product에 하위 폴더로 api폴더를 생성해주시고, 3개의 파일을 만듭니다.
