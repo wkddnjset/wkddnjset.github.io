@@ -50,3 +50,18 @@ CORS_ORIGIN_ALLOW_ALL = True
 **settings.py**에 생성한 앱과 라이브러리들을 등록하고, **CORS**세팅을 해줍니다.
 
 > [[미들웨어에 대한 자세한 설명](http://uiandwe.tistory.com/1160)]을 참고하세요!
+
+## API를 위한 파일 생성하기
+
+{% highlight python linenos %}
+|-- Product
+|   |-- api
+|   |   |-- serializer.py
+|   |   |-- urls.py
+|   |   |-- views.py
+|   |-- migrations
+|   | ...
+|   | ...
+{% endhighlight %}
+
+Product에 하위 폴더로 api폴더를 생성해주시고, 3개의 파일을 만듭니다.
