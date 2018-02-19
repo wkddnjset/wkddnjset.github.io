@@ -63,9 +63,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 |-----
 {% endhighlight %}
 
-Product에 하위 폴더로 api폴더를 생성해주시고, 3개의 파일을 만듭니다!!
+**Product**에 하위 폴더로 **api폴더**를 생성해주시고, 3개의 파일을 만듭니다!!
 
-> serializer.py 파일은 DB에 저장된 데이터를 Json 형식으로 변환해주는 역할을 합니다. urls.py와 views.py는 기존에 Django와 비슷하게 활용되어지고 있습니다.
+> **serializer.py** 파일은 DB에 저장된 데이터를 Json 형식으로 변환해주는 역할을 합니다. **urls.py**와 **views.py**는 기존에 **Django**와 비슷하게 활용되어지고 있습니다.
 
 ### api/serializer.py
 ### api/urls.py
