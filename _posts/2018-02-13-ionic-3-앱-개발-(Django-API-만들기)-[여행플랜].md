@@ -138,7 +138,7 @@ urlpatterns = [
 
 ![api-result-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-12/api_result-01.png)
 
-**Django-Rest-Framework**에서 제공해주는 **Generics View**를 사용하면 **수정**, **조회**, **변경**, **삭제가** 가능한 **API**도 구현 가능합니다.
+**Django-Rest-Framework**에서 제공해주는 **Generics View**를 사용하면 **수정**, **조회**, **변경**, **삭제**가 가능한 **API**도 구현 가능합니다.
 
 ## 다음 내용
 
