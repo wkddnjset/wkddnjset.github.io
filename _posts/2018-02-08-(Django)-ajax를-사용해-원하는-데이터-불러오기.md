@@ -7,7 +7,7 @@ categories:
 tags: django develop backend
 ---
 
-## 저는 이럴때 Ajax를 사용합니다.
+## 내가 Ajax를 사용하는 이유?
 
 Ajax 화면에 이동없이 데이터를 통신(GET, POST)하기 위해 만들어진 언어로 알고 있습니다! 하지만 단순히 GET, POST를 위해 사용하기보다 좀 더 다양하게 활용할 수 있는거 같습니다.ㅎㅎ
 
