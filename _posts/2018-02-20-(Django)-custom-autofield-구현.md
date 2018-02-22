@@ -74,7 +74,7 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.name)
-
+# Product모델에 있는 id필드를 읽어오고, keyword는 ID로 설정했습니다.
 custom_increment = IncrementCreater(Product, "id", "ID")
 print(custom_increment)
 {% endhighlight %}
