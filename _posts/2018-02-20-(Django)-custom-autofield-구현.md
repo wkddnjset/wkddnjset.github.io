@@ -23,7 +23,7 @@ class Product(models.Model):
         return str(self.name)
 {% endhighlight %}
 
-현재 저의 models.py에 다음과 같은 함수와 클래스가 있습니다. 근데 계속 개발을 하다보니 custom_increment 함수에 대해 사용 횟수가 늘어나면서 custom_increment 함수를 클래스로 만들고 상속받아서 사용하고 싶었습니다...
+현재 저의 **models.py**에 다음과 같은 함수와 클래스가 있습니다. 근데 계속 개발을 하다보니 **custom_increment** 함수에 대해 사용 횟수가 늘어나면서 **custom_increment** 함수를 **클래스**로 만들고 **상속**받아서 사용하고 싶었습니다...
 
 ### myapp/creater.py
 
@@ -53,7 +53,7 @@ class IncrementCreater:
         four_padding()
 {% endhighlight %}
 
-그래서 다음과 같은 클래스를 갖고 있는 Python 파일을 만들었습니다. 3개의 파라미터를 넘겼습니다.
+그래서 다음과 같은 클래스를 갖고 있는 **Python** 파일을 만들었습니다.
 
 - **model**
 	- 체크하고 싶은 필드가 어떤 모델에 있는지를 정의
@@ -63,3 +63,20 @@ class IncrementCreater:
 	- keyword는 저장될 앞자리 String 정의
 > keyword = "ID" => ID0000, ID0001, ID0002...
 
+### myapp/models.py
+{% highlight python linenos %}
+from creater import IncrementCreater
+...
+
+class Product(models.Model):
+    id     = models.CharField(max_length=2, primary_key=True, default=custom_increment)
+    name   = models.CharField(max_length=20, null=False, blank=False)
+
+    def __str__(self):
+        return str(self.name)
+
+custom_increment = IncrementCreater(Product, "id", "ID")
+print(custom_increment)
+{% endhighlight %}
+
+**creater.py**에서 **IncrementCreater** 클래스를 **import**했습니다..이제 이걸 **Product** 클래스에 **id** 필드에 **default** 속성에 넣어주고 싶은데 이걸 어떻게 구현해야하는지 감이안옵니다.ㅠㅠ 제발 알려주세염
