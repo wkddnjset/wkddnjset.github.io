@@ -37,13 +37,16 @@ class IncrementCreater:
 
     def four_padding(self):
         model = self.model
-        print(model)
         field_name = self.field_name
         keyword = self.keyword
+
+        # model에서 field_name로 정렬하고 그중 제일 마지막 값을 읽어온다.
         last_field = model.objects.all().order_by(field_name).last()
+        # last_field의 값이 없을 경우 "ID0000"을 리턴한다.
         if not last_field:
             return keyword + '0000'
         old_code = last_field.field_name
+        # last_field의 field_name을 불러와서 숫자부분만 slice한다.
         slice_code = int(old_code[2:6])
         new_code = slice_code + 1
         new_code = keyword + str(new_code).zfill(4)
