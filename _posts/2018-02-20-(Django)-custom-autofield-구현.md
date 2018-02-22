@@ -1,66 +1,45 @@
 ---
 title: (Django) 모델에서 Custom AutoField 구현
 comments: true
-description: 질문을 위해 포스팅을 했습니다. 제ㅔ에엥발 알려주세요.
+description: Custom AutoField를 만들기 위해서 클래스를 만들고 models.py로 import하는 과정에 대한 내용을 포스팅했습니다.
 categories:
  - Django
 tags: django develop 
 ---
 
-## 누추한 곳까지 찾아와주시다니 정말 감사합니다ㅎㅎ
+## 설명
 
-### myapp/models.py
-
-{% highlight python linenos %}
-def custom_increment:
-	...
-
-class Product(models.Model):
-    id     = models.CharField(max_length=6, primary_key=True, default=custom_increment)
-    name   = models.CharField(max_length=20, null=False, blank=False)
-
-    def __str__(self):
-        return str(self.name)
-{% endhighlight %}
-
-현재 저의 **models.py**에 다음과 같은 함수와 클래스가 있습니다. 근데 계속 개발을 하다보니 **custom_increment** 함수에 대해 사용 횟수가 늘어나면서 **custom_increment** 함수를 **클래스**로 만들고 **상속**받아서 사용하고 싶었습니다...
+**Django**에서 **Models**를 상속 받아서 필드를 새로 만드는것이 아니라 **CharField**에서 **Default** 값이 자동으로 증가하는 클래스를 만들고 해당 클래스를 사용해서 **AutoField**를 구현해보려고 합니다.
 
 ### myapp/creater.py
 
 {% highlight python linenos %}
 class IncrementCreater:
 
-    def __init__(self, model, field_name, keyword):
-        self.model = model
-        self.field_name = field_name
+    def __init__(self, last_col, last_field, keyword):
+        self.last_col = last_col
+        self.last_field = last_field
         self.keyword = keyword
 
     def four_padding(self):
-        model = self.model
-        field_name = self.field_name
-        keyword = self.keyword
-
-        # model에서 field_name로 정렬하고 그중 제일 마지막 값을 읽어온다.
-        last_field = model.objects.all().order_by(field_name).last()
-        # last_field의 값이 없을 경우 "ID0000"을 리턴한다.
-        if not last_field:
-            return keyword + '0000'
-        old_code = last_field.field_name
-        # last_field의 field_name을 불러와서 숫자부분만 slice한다.
-        slice_code = int(old_code[2:6])
+        # 마지막 열을 확인 후 존재하지 않을 경우 '0000'을 리턴한다.
+        if not self.last_col:
+            return self.keyword  + '0000'
+        slice_code = int(self.last_field[2:6])
         new_code = slice_code + 1
-        new_code = keyword + str(new_code).zfill(4)
+        new_code = self.keyword + str(new_code).zfill(4)
         return new_code
 
     if __name__ == '__main__':
         four_padding()
 {% endhighlight %}
 
-그래서 다음과 같은 클래스를 갖고 있는 **Python** 파일을 만들었습니다.
+그래서 다음과 같은 클래스를 갖고 있는 **Python** 파일을 만들어줍니다.
 
-- **model** - 체크하고 싶은 필드가 어떤 모델에 있는지를 정의
-- **field_name** - custom_increment 하고 싶은 필드명
-- **keyword** - keyword는 저장될 앞자리 String 정의
+- **last_col** - Auto Increment Field를 포함한 모델의 마지막 열을 불러옵니다.
+- **last_field** - 마지막 열의 Auto Increment Field값을 불러옵니다.
+- **keyword** - keyword는 저장될 앞자리 String 정의합니다.
+
 > keyword = "ID" => ID0000, ID0001, ID0002...
 
 ### myapp/models.py
@@ -68,15 +47,17 @@ class IncrementCreater:
 from creater import IncrementCreater
 ...
 
+def custom_increment():
+    object = Industry.objects.all()
+    last_col = object.order_by("code").last()
+    last_field = last_col.code
+    result = IncrementCreater(last_col, last_field, "ID").four_padding()
+    return result
+
 class Product(models.Model):
     id     = models.CharField(max_length=6, primary_key=True, default=custom_increment)
     name   = models.CharField(max_length=20, null=False, blank=False)
-
-    def __str__(self):
-        return str(self.name)
-# Product모델에 있는 id필드를 읽어오고, keyword는 ID로 설정했습니다.
-custom_increment = IncrementCreater(Product, "id", "ID")
-print(custom_increment)
+...
 {% endhighlight %}
 
-**creater.py**에서 **IncrementCreater** 클래스를 **import**했습니다..이제 이걸 **Product** 클래스에 **id** 필드에 **default** 속성에 넣어주고 싶은데 이걸 어떻게 구현해야하는지 감이안옵니다.ㅠㅠ 제발 알려주세염
+**클래스**를 **import**하고 **custom_increment** 함수를 만들어서 함수에서 클래스를 사용해 결과값을 **default** 속성에 반환했습니다. 혹시 더 좋은 방법있으면 알려주시면 감사하겠습니다 ㅠㅠ
