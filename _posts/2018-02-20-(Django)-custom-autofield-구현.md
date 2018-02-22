@@ -56,11 +56,11 @@ class IncrementCreater:
 그래서 다음과 같은 클래스를 갖고 있는 **Python** 파일을 만들었습니다.
 
 - **model**
-	- 체크하고 싶은 필드가 어떤 모델에 있는지를 정의
+	체크하고 싶은 필드가 어떤 모델에 있는지를 정의
 - **field_name**
-	- custom_increment 하고 싶은 필드명
+	custom_increment 하고 싶은 필드명
 - **keyword**
-	- keyword는 저장될 앞자리 String 정의
+	keyword는 저장될 앞자리 String 정의
 > keyword = "ID" => ID0000, ID0001, ID0002...
 
 ### myapp/models.py
