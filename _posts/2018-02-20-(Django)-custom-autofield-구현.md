@@ -7,7 +7,7 @@ categories:
 tags: django develop 
 ---
 
-## 하고 싶은 것
+## 누추한 곳까지 찾아와주시다니 정말 감사합니다ㅎㅎ
 
 ### myapp/models.py
 
