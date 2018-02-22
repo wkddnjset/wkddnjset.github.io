@@ -69,7 +69,7 @@ from creater import IncrementCreater
 ...
 
 class Product(models.Model):
-    id     = models.CharField(max_length=2, primary_key=True, default=custom_increment)
+    id     = models.CharField(max_length=6, primary_key=True, default=custom_increment)
     name   = models.CharField(max_length=20, null=False, blank=False)
 
     def __str__(self):
