@@ -101,12 +101,7 @@ class Industry(models.Model):
 
 {% highlight python linenos %}
 class IncrementCreater:
-
-    def __init__(self, model, field_name, keyword):
-        self.model = model
-        self.field_name = field_name
-        self.keyword = keyword
-
+    ...
     def four_padding(self):
         last_model = self.model.objects.all().order_by(self.field_name).last()
         if not last_model:
@@ -119,7 +114,7 @@ class IncrementCreater:
         return new_field_val
 {% endhighlight %}
 
-위에 **get_industry_code** 함수에서 파라미터로 넘긴 **field_name**이 String 형태로 되어있기 때문에 이를 해결하기 위해서 getattr를 사용했습니다!!!
+위에 **get_industry_code** 함수에서 파라미터로 넘긴 **field_name**이 String 형태로 되어있기 때문에 이를 해결하기 위해서 **getattr**를 사용했습니다!!!
 
 
 
