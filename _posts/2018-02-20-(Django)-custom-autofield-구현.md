@@ -1,13 +1,13 @@
 ---
 title: (Django) 모델에서 Custom AutoField 구현
 comments: true
-description: 질문을 위해 포스팅을 했습니다. 제ㅔ에엥발 알려주세요.
+description: Django 모델에서 Field의 default 값을 설정 해줌으로서 AutoField를 구현하는 과정에서 생긴 문제 및 질문과 해결 방벙에 대한 포스팅입니다.
 categories:
  - Django
 tags: django develop 
 ---
 
-## 누추한 곳까지 찾아와주시다니 정말 감사합니다ㅎㅎ
+## 문제점
 
 ### myapp/models.py
 
@@ -80,3 +80,65 @@ print(custom_increment)
 {% endhighlight %}
 
 **creater.py**에서 **IncrementCreater** 클래스를 **import**했습니다..이제 이걸 **Product** 클래스에 **id** 필드에 **default** 속성에 넣어주고 싶은데 이걸 어떻게 구현해야하는지 감이안옵니다.ㅠㅠ 제발 알려주세염
+
+## Ask Django 권재원님 도움을 받아 해결했습니다.
+
+### myapp/models.py
+{% highlight python linenos %}
+def get_industry_code():
+    result = IncrementCreater(Industry, "code", "ID")
+    return result.four_padding()
+
+class Industry(models.Model):
+...
+    code     = models.CharField(max_length=6, primary_key=True, default=get_industry_code)
+...
+{% endhighlight %}
+
+**get_industry_code** 라는 함수를 만들어 주고 생성한 **IncrementCreater** 클래스에 파라미터로 값을 넘겨주어 결과 값을 반환받습니다. 그리고 생성한 **Industry** 모델에서 **default**값으로 함수의 결과값을 넣습니다. 
+
+### myapp/creater.py
+
+{% highlight python linenos %}
+class IncrementCreater:
+
+    def __init__(self, model, field_name, keyword):
+        self.model = model
+        self.field_name = field_name
+        self.keyword = keyword
+
+    def four_padding(self):
+        last_model = self.model.objects.all().order_by(self.field_name).last()
+        if not last_model:
+            return self.keyword  + '0000'
+        # getattr를 사용해서 String상태의 field_name으로 필드 값을 가져왔다
+        last_field = getattr(last_model, self.field_name)
+        last_field_int = int(last_field[2:6])
+        new_field_val = last_field_int + 1
+        new_field_val = self.keyword + str(new_field_val).zfill(4)
+        return new_field_val
+{% endhighlight %}
+
+위에 **get_industry_code** 함수에서 파라미터로 넘긴 **field_name**이 String 형태로 되어있기 때문에 이를 해결하기 위해서 getattr를 사용했습니다!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
