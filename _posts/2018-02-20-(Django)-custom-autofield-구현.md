@@ -85,14 +85,13 @@ print(custom_increment)
 
 ### myapp/models.py
 {% highlight python linenos %}
-def get_industry_code():
-    result = IncrementCreater(Industry, "code", "ID")
+def custom_increment():
+    result = IncrementCreater(Product, "code", "ID")
     return result.four_padding()
 
-class Industry(models.Model):
-...
-    code     = models.CharField(max_length=6, primary_key=True, default=get_industry_code)
-...
+class Product(models.Model):
+    id = models.CharField(max_length=6, primary_key=True, default=custom_increment)
+    ...
 {% endhighlight %}
 
 **get_industry_code** 라는 함수를 만들어 주고 생성한 **IncrementCreater** 클래스에 파라미터로 값을 넘겨주어 결과 값을 반환받습니다. 그리고 생성한 **Industry** 모델에서 **default**값으로 함수의 결과값을 넣습니다. 
