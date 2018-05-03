@@ -31,60 +31,37 @@ class Profile(models.Model):
 {% endhighlight %}
 
 
-{% highlight bash linenos %}
-C:\Users\wk647\Desktop\how-to-use-github> git fetch
-C:\Users\wk647\Desktop\how-to-use-github> git checkout Jangwon
-{% endhighlight %}
-
-- **git fetch** : 브런치에 대해 변경되거나 추가된 사항에 대해 정보를 업데이트 합니다.
-- **git checkout [브런치 이름]** : 브런치를 변경합니다.
-
-{% highlight bash linenos %}
-C:\Users\wk647\Desktop\how-to-use-github> git status
-On Branch Jangwon
-...
-{% endhighlight %}
-
-**git status**라는 명령어로 브런치 **checkout** 상태를 확인할 수 있습니다.
-
-### Git Push 하기
-
-#### branch.py 생성하기
+### views.py
 
 {% highlight python linenos %}
-def branch_add(x, y):
-    return x+x
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save()
+            return redirect(settings.LOGIN_URL) # default : "/accounts/login/"
+    else:
+        form = SignupForm()
+    return render(request, 'accounts/signup_form.html', {
+        'form' : form,
+    })
 {% endhighlight %}
 
-이번에는 **branch.py**을 생성합니다.
+### accounts/signup_form.html
 
-#### Push 하기
-
-{% highlight bash linenos %}
-C:\Users\wk647\Desktop\how-to-use-github> git add -A
-C:\Users\wk647\Desktop\how-to-use-github> git commit -m "commit"
-C:\Users\wk647\Desktop\how-to-use-github> git push origin Jangwon
+{% highlight html linenos %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit"/>
+</form>
 {% endhighlight %}
 
-- **git add -A** : 해당 폴더에 모든 파일을 추가 합니다.
-- **git commit -m "[커밋메세지]"** : 추가된 파일을 커밋합니다.
-- **git push origin Jangwon** : origin이라는 저장소에 Jangwon브런치로 push합니다.
+## 주의사항
 
-## Merge 및 충돌 대처하기
-
-### Merge
-{% highlight bash linenos %}
-C:\Users\wk647\Desktop\how-to-use-github> git checkout master
-C:\Users\wk647\Desktop\how-to-use-github> git merge Jangwon
-C:\Users\wk647\Desktop\how-to-use-github> git push origin master
-{% endhighlight %}
-
-- **git checkout master** : master 브런치를 변경합니다.
-- **git merge Jangwon** : Jangwon 브런치와 merge합니다.
-- **git push origin master** : origin이라는 저장소에 master브런치로 push합니다.
-
-### 충돌이 발생
-
-두개의 브런치에서 동시에 Push를 하고 merge를 진행하게 되면!!! 충돌이 발생하게 됩니다.
+- views.py에서 request.Post 뿐만아니라 FILES를 받아야 Media 파일을 입력 받을 수 있습니다.
+- form.html에서도 form 태그의 enctype 속성이 multipart/form-data로 설정되어 있지 않다면 파일이 아닌 파일 이름만 입력되게 됩니다.
 
 
