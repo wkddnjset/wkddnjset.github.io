@@ -30,6 +30,10 @@ class Profile(models.Model):
     img = models.ImageField(upload_to="profile_pic")
 {% endhighlight %}
 
+- **ImageField**를 사용하기 위해서 [다음](https://wayhome25.github.io/django/2017/05/10/media-file/)을 참조하세요.
+- `upload_to="profile_pic"`은 저장되는 이미지 파일의 경로를 설정해주는 것입니다.
+
+> /media/profile_pic/XXXx.jpg 다음과 같은 경로로 이미지는 저장됩니다.
 
 ### views.py
 
@@ -61,7 +65,7 @@ def signup(request):
 
 ## 주의사항
 
-- views.py에서 request.Post 뿐만아니라 FILES를 받아야 Media 파일을 입력 받을 수 있습니다.
-- form.html에서도 form 태그의 enctype 속성이 multipart/form-data로 설정되어 있지 않다면 파일이 아닌 파일 이름만 입력되게 됩니다.
+- **views.py**에서 **request.POST** 뿐만아니라 **request.FILES**를 인자로 받아야 **Media 파일**을 입력 받을 수 있습니다.
+- **form.html**에서도 form 태그의 **enctype 속성**이 **multipart/form-data**로 설정되어 있지 않다면 파일이 아닌 파일 이름만 입력되게 됩니다.
 
 
