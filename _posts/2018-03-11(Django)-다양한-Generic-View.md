@@ -1,5 +1,5 @@
 ---
-title: (Django) 공부 [FBV와 CBV의 정의]
+title: (Django) 다양한 Generic View
 comments: true
 description: Ask Django에서 공부한 내용을 정리 했습니다.
 categories:

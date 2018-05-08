@@ -1,9 +1,9 @@
 ---
-title: (Django) 공부 [FBV와 CBV의 정의]
+title: (Django) FBV와 CBV의 정의
 comments: true
 description: Ask Django에서 공부한 내용을 정리 했습니다.
 categories:
- - Django/Study
+ - Django
 tags: Django 
 ---
 
