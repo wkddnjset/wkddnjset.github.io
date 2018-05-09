@@ -2,7 +2,7 @@
 title: (Django) FBV와 CBV의 사용
 comments: true
 description: Ask Django에서 공부한 내용을 정리 했습니다.
-categories:
+categories:해
  - Django/Study
 tags: Django 
 ---
