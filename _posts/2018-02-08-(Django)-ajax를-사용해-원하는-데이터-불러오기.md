@@ -3,7 +3,7 @@ title: (Django) Ajax를 사용해서 원하는 데이터 불러오기
 comments: true
 description: Django를 사용해 Json 형태의 데이터를 뿌려주고, 뷰에서 Context로 받아온 데이터 값을 통해 다른 모델에 정보를 템플릿으로 가져오는 방법에 대한 포스팅입니다.
 categories:
- - Django
+ - Django/Study
 tags: django develop backend
 ---
 
