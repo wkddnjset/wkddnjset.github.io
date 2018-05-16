@@ -4,7 +4,7 @@ comments: true
 description: Ask Django에서 공부한 내용을 정리 했습니다.
 categories:해
  - Django/Study
-tags: Django 
+tags: Django
 ---
 
 ## 정리
