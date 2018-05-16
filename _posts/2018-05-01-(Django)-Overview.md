@@ -30,6 +30,10 @@ tags: Django
 
 ## 개요
 
-### Django의 MTV 구조
+### Django의 MTV
 
 <img src="https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-05/MTV.png" style="width: 400px; margin:auto;">
+
+### Django의 기본 구조
+
+<img src="https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-05/DjangoFlow.png" style="width: 500px; margin:auto;">
