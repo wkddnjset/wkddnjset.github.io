@@ -30,7 +30,6 @@ tags: Django
 
 ## 개요
 
-- Django의 MTV 구조
+### Django의 MTV 구조
 
-<img src="https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-05/MTV.png" style="width: 300px; margin:auto;">
-![MTV](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-05/MTV.png)
+<img src="https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-05/MTV.png" style="width: 400px; margin:auto;">
