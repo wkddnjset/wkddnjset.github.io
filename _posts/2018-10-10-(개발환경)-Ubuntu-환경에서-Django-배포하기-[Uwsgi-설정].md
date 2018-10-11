@@ -1,7 +1,7 @@
 ---
 title: (개발환경) Ubuntu 환경에서 Django 배포하기 - [uWSGI]
 comments: true
-description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정입니다.
+description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정이다.
 categories:
  - Dev
 tags: Dev, Django 
@@ -9,9 +9,9 @@ tags: Dev, Django
 
 ## Overview
 
-Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도록 하겠습니다. EC2 인스턴스를 생성 하였으며, SSH 연결까지 된 상황이라고 가정하고 진행하였습니다.
+Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도록 할 것이다. EC2 인스턴스를 생성 하였으며, SSH 연결까지 된 상황이라고 가정하고 진행했다.
 
-> [이 곳](https://medium.freecodecamp.org/django-uwsgi-nginx-postgresql-setup-on-aws-ec2-ubuntu16-04-with-python-3-6-6c58698ae9d3)을 참고해 진행하였습니다.
+> [이 곳](https://medium.freecodecamp.org/django-uwsgi-nginx-postgresql-setup-on-aws-ec2-ubuntu16-04-with-python-3-6-6c58698ae9d3)을 참고해 진행했다.
 
 ## 목차
 
@@ -54,7 +54,7 @@ Jangwon@ip-172-31-5-231:~$ source bin/activate
 ```
 #### uwsgi.ini
 
-> 본인 프로젝트에 맞춰 디렉토리 설정을 바꿔야합니다.
+> 본인 프로젝트에 맞춰 디렉토리 설정을 바꿔야한다.
 
 ```
 [uwsgi]
@@ -153,7 +153,7 @@ max-worker-lifetime = 300
 
 #### 권한 설정
 
-> 해당 파일에 모든 사용자가 접근 가능하도록 권한 설정을 해줍니다.
+> 해당 파일에 모든 사용자가 접근 가능하도록 권한 설정
 
 ```bash
 $ sudo chmod 777 /RSP-dev/Rspirit/run
@@ -168,7 +168,7 @@ $ sudo chmod 777 /RSP-dev/Rspirit/log
 - 에러발생 시
     - https://stackoverflow.com/questions/21669354/rebuild-uwsgi-with-pcre-support
 
-> 실제 정상작동 해도 http://[Your-IP]:8000 으로 접속이 불가능합니다. Daemon 설정까지 완료한 후 에러를 확인하는게 좋습니다.
+> 실제 정상작동 해도 http://[Your-IP]:8000 으로 접속이 불가능하다. Daemon 설정까지 완료한 후 에러를 확인하는게 좋다.
 
 #### uWSGI 백그라운드에서 실행하기 위해 Systemd 설정 [Daemon 설정]
 
@@ -178,7 +178,7 @@ $ sudo chmod 777 /RSP-dev/Rspirit/log
 $ sudo vi /etc/systemd/system/uwsgi.service
 ```
 
-> User, Group, Directory.. 등 본인 프로젝트에 맞게 수정합니다.
+> User, Group, Directory.. 등 본인 프로젝트에 맞게 수정한다.
 
 ```
 [Unit]
@@ -200,7 +200,7 @@ NotifyAccess=all
 WantedBy=multi-user.target
 ```
 
-**systemctl 데몬을 다시 로드하여 systemd Manager 구성을 다시 로드합니다.**
+**systemctl 데몬을 다시 로드하여 systemd Manager 구성을 다시 로드한ㄷ다.**
 
 ```bash
 $ sudo systemctl daemon-reload

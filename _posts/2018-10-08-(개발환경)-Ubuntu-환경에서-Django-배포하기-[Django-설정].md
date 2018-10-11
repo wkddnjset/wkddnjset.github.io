@@ -1,7 +1,7 @@
 ---
 title: (개발환경) Ubuntu 환경에서 Django 배포하기 - [Django]
 comments: true
-description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정입니다.
+description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정이다.
 categories:
  - Dev
 tags: Dev, Django 
@@ -9,9 +9,9 @@ tags: Dev, Django
 
 ## Overview
 
-Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도록 하겠습니다. EC2 인스턴스를 생성 하였으며, SSH 연결까지 된 상황이라고 가정하고 진행하였습니다.
+Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도록 할 것이다. EC2 인스턴스를 생성 하였으며, SSH 연결까지 된 상황이라고 가정하고 진행했다.
 
-> [이 곳](https://medium.freecodecamp.org/django-uwsgi-nginx-postgresql-setup-on-aws-ec2-ubuntu16-04-with-python-3-6-6c58698ae9d3)을 참고해 진행하였습니다.
+> [이 곳](https://medium.freecodecamp.org/django-uwsgi-nginx-postgresql-setup-on-aws-ec2-ubuntu16-04-with-python-3-6-6c58698ae9d3)을 참고해 진행했다.
 
 ## 목차
 
@@ -133,4 +133,4 @@ Jangwon@ip-172-31-5-231:~$ source bin/activate
 
 > http://[Your-IP]:8000
 
-> 위 링크에서 정상 작동하는 것을 확인 할 수 있습니다.
+> 위 링크에서 정상 작동하는 것을 확인 할 수 있다.
