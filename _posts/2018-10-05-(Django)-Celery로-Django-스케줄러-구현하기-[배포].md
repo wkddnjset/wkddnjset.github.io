@@ -1,5 +1,5 @@
 ---
-title: (Django) Celery로 Django 스케줄러 구현하기 - [테스트]
+title: (Django) Celery로 Django 스케줄러 구현하기 - [배포]
 comments: true
 description: Celery와 Celery Beat를 사용해 스케줄러를 구현하고, 이를 배포하는 과정까지 진행해보도록 하겠습니다.
 categories:
@@ -21,117 +21,135 @@ tags: Dev, Django
 - [Celery로 Django 스케줄러 구현하기 - [테스트]]()
 - [Celery로 Django 스케줄러 구현하기 - [배포]]()
 
-## Celery 란?
-
-Celey는 백엔드에서 발생하는 병목현상을 해결하기 위해서 비동기 처리를 도와주는 놈이고, Django 에서 주로 사용된다.
-
-> 메일을 보내거나, 큰 파일을 저장할 경우 처리시간이 길어지는데 이를 비동기 처리 함으로써 병목현상 해결
-
-## Broker 란?
-
-Broker는 Celery에 작업을 요청할 때 사용된다. 기본적으로 Broker로 사용되는 툴은 RabbitMQ와 Redis가 있다.
-- [RabbitMQ](https://www.rabbitmq.com/)
-  - Celery를 사용하는 유저들 중 사용 비율이 제일 높아보인다.
-  - Window, Celery 최신 버전에서 RabbitMQ 지원을 안한다.
-- [Redis](https://redis.io/)
-  - Amazon ElastiCache에서 지원하기에 Aws를 사용할 경우 함께 사용하면 좋을 것 같다.
-  - 다만, EC2에서 자체적으로 구축하면 좀 더 저렴하게 사용가능해 보인다.
+## 우분투 환경에 배포하기
 
 ### RabbitMQ 설치
-- window
-  - [RabbitMQ 설치](https://www.rabbitmq.com/install-windows.html)
-  - [플러그인 설치](http://yi-chi.tistory.com/74)
-  - http://localhost:15672/ `id:guest, pw:guest`
 
-> window의 경우 erlang을 따로 설치해야 하는데 RabbitMQ 최신 버전에서는 erlang을 설치할 수 있는 페이지로 리다이렉트 시켜준다. 다른 OS에 대한 설치도 [[RabbitMQ 설치](https://www.rabbitmq.com/install-windows.html)] 이곳에서 확인 가능합니다.
-
-### Django 세팅
-
-3.1.xx 버전과 4.0.xx 버전의 세팅이 다르니 주의해주세요. RabbitMQ가 설치되었다는 가정 하에 개발을 진행했습니다.
-
-#### 설치
+RabbitMQ 서버 설치
 
 ```bash
-$ pip install celery
-$ pip install celery==3.1.24
+$ sudo apt-get install rabbitmq-server
 ```
 
-> window를 사용할 경우 3.1.24를 사용해야합니다. 무조건!!
-
-#### Project/Project/Celery.py
-
-```python
-from __future__ import absolute_import, unicode_literals
-import os
-from celery import Celery
-from datetime import timedelta
-from django.conf import settings
-
-# set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Project.settings')
-
-app = Celery('Project', broker='amqp://guest:guest@localhost:5672//')
-
-# v4.0 이상 일 경우
-# app.config_from_object('django.conf:settings', namespace='CELERY')
-# v3.1 일 경우
-app.config_from_object('django.conf:settings')
-
-# v4.0 이상 일 경우
-# app.autodiscover_tasks()
-# v3.1 일 경우
-app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-
-app.conf.update(
-    CELERY_TASK_SERIALIZER='json',
-    CELERY_ACCEPT_CONTENT=['json'],  # Ignore other content
-    CELERY_RESULT_SERIALIZER='json',
-    CELERY_TIMEZONE='Asia/Seoul',
-    CELERY_ENABLE_UTC=False,
-    CELERYBEAT_SCHEDULE = {
-        'say_hello-every-seconds': {
-            "task": "App.tasks.CheckSite",
-            'schedule': timedelta(seconds=30),
-            'args': ()
-        },
-    }
-)
-```
-
-#### Project/App/tasks.py
-
-```python
-from __future__ import absolute_import
-
-from CheckYourServer.celery import app
-
-@app.task
-def say_hello():
-    print("hellow world!")
-```
-
-> 이때 파일명은 무조건 `tasks.py`여야 한다.
-
-### 테스트
-
-#### Celery worker 실행
-
-스케줄러는 Celery beat에서 제공해주는 기능이며, Celery worker가 실행된 상태에서만 가능하다.
+Management Plugin 활성화
 
 ```bash
-$ celery -A Project worker -l info
-...
-...
-[2018-10-10 09:22:34,440: WARNING/MainProcess] celery@DESKTOP-123 ready.
+$ sudo rabbitmq-plugins enable rabbitmq_management
+$ sudo service rabbitmq-server restart
 ```
 
-ready가 되면 Celery worker가 준비되었다는 의미이다.
-
-#### Celery beat 실행
+계정 추가하기
 
 ```bash
-$ celery beat -A CheckYourServer --loglevel=INFO
-celery beat v3.1.24 (Cipater) is starting.
-...
+$ sudo rabbitmqctl add_user wkddnjset [PASSWORD]
+$ sudo rabbitmqctl set_user_tags wkddnjset administrator
+# $ sudo rabbitmqctl set_permissions -p / wkddnjset ".*" ".*" ".*"
 ```
-Celery beat에 대한 동작은 `Project/Project/Celery.py`에서 설정이 가능하다.
+
+**http://[Your-IP]:15672/에서 RabbitMQ가 작동하는 것을 확인 할 수 있다.**
+
+> guest/guest 계정은 로컬에서만 적용가능하다. 계정을 추가하는 이유는 정상작동을 확인하기 위함이다. Django 세팅과 전혀 상관없다.
+
+### Celery Daemon으로 실행하기
+
+[3.1.25버전 Docs](http://docs.celeryproject.org/en/3.1/tutorials/daemonizing.html)
+
+#### 실행 파일 생성
+
+1. `/etc/init.d/celeryd` 파일 생성
+2. [celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celeryd)에 내용을 복붙한다.
+
+```bash
+$ sudo vi /etc/init.d/celeryd
+```
+
+> vi로 파일 생성 후 [celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celeryd) 코드를 복붙한다.
+
+#### Config 파일 생성
+
+1. `/etc/default/celeryd` 파일 생성
+
+```bash
+$ sudo vi /etc/default/celeryd
+```
+
+```
+CELERY_BIN="/CheckYourSite/CheckYourSite/bin/celery"
+
+# App instance to use
+CELERY_APP="CheckYourServer"
+
+# Where to chdir at start.
+CELERYD_CHDIR="/CheckYourSite/CheckYourSite"
+
+# Extra arguments to celeryd
+CELERYD_OPTS="--time-limit=300 --concurrency=8"
+
+# Name of the celery config module.
+CELERY_CONFIG_MODULE="CheckYourServer.settings"
+
+# %n will be replaced with the nodename.
+CELERYD_LOG_FILE="/CheckYourSite/CheckYourSite/log/celery-%n.log"
+CELERYD_PID_FILE="/CheckYourSite/CheckYourSite/log/celery-run-%n.log"
+
+# Workers should run as an unprivileged user.
+CELERYD_USER="Jangwon"
+CELERYD_GROUP="CheckYourSite"
+
+# Name of the projects settings module.
+export DJANGO_SETTINGS_MODULE="CheckYourServer.settings"
+```
+
+#### 권한설정
+
+```bash
+$ sudo chmod 755 /etc/init.d/celeryd
+$ sudo chown root:root /etc/init.d/celeryd
+```
+
+#### 실행하기
+
+```bash
+$ sudo /etc/init.d/celeryd start
+# $ sudo /etc/init.d/celeryd restart
+celery init v10.1.
+Using config script: /etc/default/celeryd
+celery multi v3.1.24 (Cipater)
+> Starting nodes...
+        > celery@ip-172-31-xx-xx: OK
+```
+
+### Celery beat Daemon으로 실행하기
+
+#### 실행파일 생성
+
+1. `/etc/init.d/celerybeat ` 파일 생성
+2. [celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celerybeat)에 내용을 복붙한다.
+
+```bash
+sudo vi /etc/init.d/celerybeat
+```
+#### Config 파일 생성
+
+Celeryd Config 파일을 생성했기 때문에 따로 Celery Beat Config 파일을 만들필요없다. 혹시 두개의 모듈이 다른 세팅에서 돌아야 한다면, [Docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#init-script-celerybeat)를 참고해서 수정하기 바란다.
+
+#### 권한설정
+
+```bash
+$ sudo chmod 755 /etc/init.d/celeryd
+$ sudo chown root:root /etc/init.d/celeryd
+```
+
+#### 실행하기
+
+```bash
+$ sudo /etc/init.d/celerybeat start
+celery init v10.1.
+Using configuration: /etc/default/celeryd
+Stopping celerybeat... OK
+```
+
+### 결과
+
+개인적으로 `Celery Beat`가 동작하면서, **CheckLog**라는 모델에 **Create** 되도록 설정해놨다. 아래 사진에 생성날짜를 확인해보면 1분 간격으로 `Celery Beat`가 동작하는 것을 확인 할 수 있다.
+![Celery-Beat-Result](https://github.com/wkddnjset/wkddnjset.github.io/blob/master/_posts/images/2018-10/celery-beat.png?raw=true)
