@@ -188,7 +188,7 @@ After=network.target
 [Service]
 User=Jangwon
 Group=RSP-dev
-WorkingDirectory=/RSP-dev/Rspirit/src
+WorkingDirectory=/RSP-dev/Rspirit
 Environment="PATH=/RSP-dev/Rspirit/bin"
 ExecStart=/RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
 Restart=always
