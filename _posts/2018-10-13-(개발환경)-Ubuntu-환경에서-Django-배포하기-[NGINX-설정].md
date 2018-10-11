@@ -15,9 +15,9 @@ Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도
 
 ## 목차
 
-- [Python 설치 및 Django 환경 설정하기](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)
-- [uWSGI 어플리케이션 서버 설정하기](http://jangwon.me/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/)
-- EC2에서 uWSGI를 위한 NGINX 설정하기 ()
+- [Ubuntu 환경에서 Django 배포하기 - [Django]](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)
+- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](http://jangwon.me/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/)
+- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](http://jangwon.me/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/)
 
 ## uWSGI를 위한 NGINX 세팅하기
 
