@@ -23,6 +23,8 @@ Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도
 
 ### 시작하기에 앞서 nginx를 설치합니다.
 
+- [재설치 방법](https://stackoverflow.com/questions/12362967/how-can-i-restore-etc-nginx)
+
 ```bash
 $ sudo apt-get install nginx
 ```
