@@ -63,27 +63,27 @@ Python 3.6.6
 
 Django itself is very secure framework, I agree. But web applications are still vulnerable. It is good practice to run your application as system users with limited privileges which has limited access to resources on your server. So in this section, we will be adding a new user & permission group to our EC2 instance.
 
-### 우분투 시스템 그룹(RSP-dev)을 추가 하고 유저(Jangwon) 등록
+### 우분투 시스템 그룹(Tirrilee-dev)을 추가 하고 유저(Jangwon) 등록
 
 ```bash
-$ sudo groupadd --system RSP-dev
-$ sudo useradd --system --gid RSP-dev --shell /bin/bash --home /RSP-dev/Rspirit Jangwon
+$ sudo groupadd --system Tirrilee-dev
+$ sudo useradd --system --gid Tirrilee-dev --shell /bin/bash --home /Tirrilee-dev/Project Jangwon
 $ sudo passwd Jangwon
 ```
-> 여기서 `Rspirit`은 Django 프로젝트 생성시 설정할 프로젝트 이름이다.
+> 여기서 `Project`은 Django 프로젝트 생성시 설정할 프로젝트 이름이다.
 
 ### 프로젝트를 저장할 폴더 생성
 
 ```
-$ sudo mkdir -p /RSP-dev/Rspirit/
-$ sudo chown Jangwon /RSP-dev/Rspirit/
+$ sudo mkdir -p /Tirrilee-dev/Project/
+$ sudo chown Jangwon /Tirrilee-dev/Project/
 ```
 
 ### 설정한 그룹 외 유저들이 해당 폴더에 접근하지 못하도록 설정
 
 ```bash
-$ sudo chown -R Jangwon:users /RSP-dev/Rspirit
-$ sudo chmod -R g+w /RSP-dev/Rspirit
+$ sudo chown -R Jangwon:users /Tirrilee-dev/Project
+$ sudo chmod -R g+w /Tirrilee-dev/Project
 ```
 
 ### 설정한 유저로 변경
@@ -119,16 +119,16 @@ Jangwon@ip-172-31-5-231:~$ git pull origin master
 ```bash
 Jangwon@ip-172-31-5-231:~$ python3.6 -m venv .
 Jangwon@ip-172-31-5-231:~$ source bin/activate
-(Rspirit)Jangwon@ip-172-31-5-231:~$ pip install -r requirements.txt
+(Project)Jangwon@ip-172-31-5-231:~$ pip install -r requirements.txt
 ```
 
 ### Django 환경 설정 및 실행
 
 ```bash
-(Rspirit)Jangwon@ip-172-31-5-231:~$ python manage.py migrate
-(Rspirit)Jangwon@ip-172-31-5-231:~$ python manage.py createsuperuser
-(Rspirit)Jangwon@ip-172-31-5-231:~$ python manage.py collectstatic
-(Rspirit)Jangwon@ip-172-31-5-231:~$ python manage.py runserver 0.0.0.0:8000
+(Project)Jangwon@ip-172-31-5-231:~$ python manage.py migrate
+(Project)Jangwon@ip-172-31-5-231:~$ python manage.py createsuperuser
+(Project)Jangwon@ip-172-31-5-231:~$ python manage.py collectstatic
+(Project)Jangwon@ip-172-31-5-231:~$ python manage.py runserver 0.0.0.0:8000
 ```
 
 > http://[Your-IP]:8000

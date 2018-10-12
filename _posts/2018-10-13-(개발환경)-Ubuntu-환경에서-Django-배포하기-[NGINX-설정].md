@@ -49,8 +49,8 @@ $ sudo vi /etc/nginx/sites-available/nginx-uwsgi.conf
 ```
 
 ```
-upstream RSP_dev {
-    server unix:/RSP-dev/Rspirit/run/uwsgi.sock;
+upstream Tirrilee_dev {
+    server unix:/Tirrilee-dev/Project/run/uwsgi.sock;
 }
 
 server {
@@ -63,24 +63,24 @@ server {
     location /static {
     # exact path to where your static files are located on server 
     # [mostly you won't need this, as you will be using some storage service for same]
-        alias /RSP-dev/Rspirit/static;
+        alias /Tirrilee-dev/Project/static;
     }
 
     location /media {
     # exact path to where your media files are located on server 
     # [mostly you won't need this, as you will be using some storage service for same]
-        alias /RSP-dev/Rspirit/media;
+        alias /Tirrilee-dev/Project/media;
     }
 
     location / {
         include uwsgi_params;
-        uwsgi_pass RSP_dev;
+        uwsgi_pass Tirrilee_dev;
         uwsgi_read_timeout 300s;
         uwsgi_send_timeout 300s;
     }
 
-    access_log /RSP-dev/Rspirit/log/dev-nginx-access.log;
-    error_log /RSP-dev/Rspirit/log/dev-nginx-error.log;
+    access_log /Tirrilee-dev/Project/log/dev-nginx-access.log;
+    error_log /Tirrilee-dev/Project/log/dev-nginx-error.log;
 }
 ```
 
@@ -103,8 +103,8 @@ nginx를 테스트 하고, 에러가 발생했을 경우 로그파일을 확인�
 ```bash
 $ sudo nginx -t
 ...
-$ tail -f /webapps/updateMe/log/nginx-error.log
-$ tail -f /webapps/updateMe/log/nginx-access.log
+$ tail -f /Tirrilee-dev/Project/log/nginx-error.log
+$ tail -f /Tirrilee-dev/Project/log/nginx-access.log
 ```
 
 nginx 서버 재시작

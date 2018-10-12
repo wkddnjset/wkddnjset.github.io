@@ -43,7 +43,7 @@ Jangwon@ip-172-31-5-231:~$ source bin/activate
 ```bash
 (project_name)Jangwon@ip-172-31-5-231:~$ uwsgi --http :8000 --home <path-to-virtualenv> --chdir <path-to-manage.py-dir> -w <project-name>.wsgi
 ```
-> uwsgi --http :8000 --home /RSP-dev/Rspirit/ --chdir /RSP-dev/Rspirit/ -w Rspirit.wsgi
+> uwsgi --http :8000 --home /Tirrilee-dev/Project/ --chdir /Tirrilee-dev/Project/ -w Rspirit.wsgi
 
 ### uWSGI configuration 파일 생성하기
 
@@ -63,13 +63,13 @@ Jangwon@ip-172-31-5-231:~$ source bin/activate
 uid = Jangwon
 
 # telling group to execute file
-gid = RSP-dev
+gid = Tirrilee-dev
 
 # name of project you during "django-admin startproject <name>"
-project_name = Rspirit
+project_name = Project
 
 # building base path to where project directory is present [In my case this dir is also where my virtual env is]
-base_dir = /RSP-dev/%(project_name)
+base_dir = /Tirrilee-dev/%(project_name)
 
 # set PYTHONHOME/virtualenv or setting where my virtual enviroment is
 virtualenv = %(base_dir)
@@ -146,9 +146,9 @@ max-worker-lifetime = 300
 #### 파일 생성
 
 ```bash
-(Rspirit)Jangwon@ip-172-31-5-231:~$ mkdir log
-(Rspirit)Jangwon@ip-172-31-5-231:~$ mkdir run
-(Rspirit)Jangwon@ip-172-31-5-231:~$ touch log/uwsgi.log
+(Project)Jangwon@ip-172-31-5-231:~$ mkdir log
+(Project)Jangwon@ip-172-31-5-231:~$ mkdir run
+(Project)Jangwon@ip-172-31-5-231:~$ touch log/uwsgi.log
 ```
 
 #### 권한 설정
@@ -156,14 +156,14 @@ max-worker-lifetime = 300
 > 해당 파일에 모든 사용자가 접근 가능하도록 권한 설정
 
 ```bash
-$ sudo chmod 777 /RSP-dev/Rspirit/run
-$ sudo chmod 777 /RSP-dev/Rspirit/log
+$ sudo chmod 777 /Tirrilee-dev/Project/run
+$ sudo chmod 777 /Tirrilee-dev/Project/log
 ```
 
 #### `uwsgi.ini` 파일을 통해 서버 실행하기
 
 ```bash
-(Rspirit)Jangwon@ip-172-31-5-231:~$ uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
+(Project)Jangwon@ip-172-31-5-231:~$ uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
 ```
 - 에러발생 시
     - https://stackoverflow.com/questions/21669354/rebuild-uwsgi-with-pcre-support
@@ -182,15 +182,15 @@ $ sudo vi /etc/systemd/system/uwsgi.service
 
 ```
 [Unit]
-Description=uWSGI instance to serve updateMe project
+Description=uWSGI instance to serve Tirrilee project
 After=network.target
 
 [Service]
 User=Jangwon
-Group=RSP-dev
-WorkingDirectory=/RSP-dev/Rspirit
-Environment="PATH=/RSP-dev/Rspirit/bin"
-ExecStart=/RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
+Group=Tirrilee-dev
+WorkingDirectory=/Tirrilee-dev/Project
+Environment="PATH=/Tirrilee-dev/Project/bin"
+ExecStart=/Tirrilee-dev/Project/bin/uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
 Restart=always
 KillSignal=SIGQUIT
 Type=notify
@@ -227,7 +227,7 @@ $ sudo service uwsgi status
 ```
 
 ```bash
-● uwsgi.service - uWSGI instance to serve updateMe project
+● uwsgi.service - uWSGI instance to serve Tirrilee project
    Loaded: loaded (/etc/systemd/system/uwsgi.service; enabled; vendor preset: enabled)
    Active: active (running) since Wed 2018-10-10 16:39:55 UTC; 36s ago
  Main PID: 3987 (uwsgi)
@@ -236,13 +236,13 @@ $ sudo service uwsgi status
    Memory: 24.3M
       CPU: 288ms
    CGroup: /system.slice/uwsgi.service
-           ├─3987 /RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
-           ├─3991 /RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
-           ├─3992 /RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
-           ├─3993 /RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
-           └─3994 /RSP-dev/Rspirit/bin/uwsgi --ini /RSP-dev/Rspirit/conf/uwsgi.ini
+           ├─3987 /Tirrilee-dev/Project/bin/uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
+           ├─3991 /Tirrilee-dev/Project/bin/uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
+           ├─3992 /Tirrilee-dev/Project/bin/uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
+           ├─3993 /Tirrilee-dev/Project/bin/uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
+           └─3994 /Tirrilee-dev/Project/bin/uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
 
 Oct 10 16:39:55 ip-172-31-21-103 systemd[1]: Starting uWSGI instance to serve updateMe project...
-Oct 10 16:39:55 ip-172-31-21-103 uwsgi[3987]: [uWSGI] getting INI configuration from /RSP-dev/Rspirit/conf/uwsgi.ini
+Oct 10 16:39:55 ip-172-31-21-103 uwsgi[3987]: [uWSGI] getting INI configuration from /Tirrilee-dev/Project/conf/uwsgi.ini
 Oct 10 16:39:55 ip-172-31-21-103 systemd[1]: Started uWSGI instance to serve updateMe project.
 ```
