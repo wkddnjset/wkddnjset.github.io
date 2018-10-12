@@ -23,6 +23,8 @@ tags: Dev, Django
 
 ## 우분투 환경에 배포하기
 
+우분투에 Django가 배포되었다는 가정하에 진행하며, 만약 안되어있을시 [이 곳](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)을 확인하기 바란다.
+
 ### RabbitMQ 설치
 
 RabbitMQ 서버 설치
