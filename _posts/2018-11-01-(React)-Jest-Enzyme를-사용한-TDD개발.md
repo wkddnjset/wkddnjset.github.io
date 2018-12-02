@@ -203,4 +203,4 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
 
 [Jest를 이용한 Unit Test 적용기 - jinseok.choi - Medium](https://medium.com/@jinseok.choi/jest%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-unit-test-%EC%A0%81%EC%9A%A9%EA%B8%B0-420049c16cc8)
 
-[React로 TDD 쵸큼 맛보기](https://www.slideshare.net/jeokrang/react-tdd-76066004)
+[React로 TDD 쵸큼 맛보기](https://www.slideshare.net/jeokrang/react-tdd-76066004)
