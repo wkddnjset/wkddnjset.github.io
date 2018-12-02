@@ -44,6 +44,7 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
 
 ### 디렉토리 구조
 
+```
     react-navbar
     │
     ├── README.md
@@ -65,6 +66,7 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
     │   ├── styles.css
     │   └── test.js
     └── yarn.lock
+```
 
 - react-navbar/src → 테스트 코드와 컴포넌트를 개발
 - react-navbar/src/Navbar → Navbar 컴포넌트를 위한 폴더 생성
@@ -81,6 +83,7 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
 
 ## Navbar Component 시나리오
 
+```
     Story. 사용자는 Navbar를 생성할 수 있다.
       senario
         given: 설정없이
@@ -100,6 +103,7 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
         when: ToggleNav를 클릭하면
         then: state가 false로 바뀌며, 메뉴가 사라진다.
     ...
+```
 
 위에 정리한 시나리오 외에도 MouseOver 시, MouseClick 시 등.. 다양한 상황에 맞춰 시나리오를 짤 수 있습니다.
 
@@ -109,9 +113,11 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
 
 ### install enzyme
 
+```bash
     $ yarn add enzyme enzyme-adapter-react-16
     or
     $ npm install enzyme enzyme-adapter-react-16
+```
 
 React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니다.
 
@@ -119,14 +125,18 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
 
 ### src/Navbar/test.js
 
+```java
     import React from 'react';
     import Navbar from './Navbar'
     import { shallow, configure } from 'enzyme';
     import Adapter from 'enzyme-adapter-react-16';
     
     configure({ adapter: new Adapter() });
+```
 
 우선 테스트 코드를 작성에 필요한, enzyme 라이브러리를 세팅을 합니다. 그리고 테스트를 진행할 컴포넌트(Navbar)를 import 합니다. 
+
+```javascript
 
     describe('Navbar 컴포넌트', () => {
       describe('사용자는 Navbar를 생성할 수 있다.', () => {
@@ -150,6 +160,7 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
           })
       })
     })
+```
 
 앞서 작성한 시나리오 맞춰 `describe`을 작성한 다음 `Test Code`를 작성합니다.
 
@@ -157,6 +168,7 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
 
 ### src/test.js
 
+```javascript
     describe('Navbar 컴포넌트', () => {
       describe('사용자는 Navbar를 생성할 수 있다.', () => {
         it(`설정없이 Navbar를 생성하면,
@@ -173,9 +185,11 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
             expect(navbar.state()).toEqual(expected)
           })
     ...
+```
 
 ### src/Navbar.js
 
+```javascript
     import React, { Component } from 'react'
     
     export default class Navbar extends Component {
@@ -198,6 +212,7 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
         )
       }
     }
+```
 
 ## Reference
 
