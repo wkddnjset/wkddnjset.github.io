@@ -176,7 +176,7 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
             // Test Code
             const navbar = shallow(<Navbar />)
             const expected = {
-              expand:"md",
+              expand:'md',
               position:null,
               bgColor:'rgb(240,240,240)',
               textColor:'rbg(100,100,100)',
@@ -197,7 +197,7 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
         super(props);
     
         this.state = {
-          expand:"md",
+          expand:'md',
           position:null,
           bgColor:'rgb(240,240,240)',
           textColor:'rbg(100,100,100)',
