@@ -72,4 +72,4 @@ C:\Users\wk647\Desktop\my_new_project\myapp> ng build --prod --output-path /배�
 
 ## Angular 배포 준비하기
 
-- [[**Angular 배포 준비하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/31/Angular-배포-준비하기/)]
+- [[**Angular 배포 준비하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/30/angular-deploy-cafe24-02/)]

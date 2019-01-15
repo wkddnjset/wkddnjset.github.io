@@ -8,7 +8,7 @@ tags: angular tutorial
 ---
 
 ## Angular 빌드하기
-- [[**Angular 빌드하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/31/Angular-설치-및-프로젝트-생성&빌드하기/)]
+- [[**Angular 빌드하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/30/angular-deploy-cafe24-02/)]
 
 ## 세팅 파일 만들기
 
@@ -71,4 +71,4 @@ app.listen(app.get('port'), function() {
 
 ## 카페24로 Angular 배포하기
 
-- [[**카페24로 Angular 배포하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/30/카페24에서-Angular-배포하기/#git-저장소에-업로드하기)]
+- [[**카페24로 Angular 배포하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/30/angular-deploy-cafe24-02/#git-저장소에-업로드하기)]

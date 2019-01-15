@@ -163,11 +163,11 @@ shh key를 저장한 경로에서 **[id_rsa.pub]**파일을 메모장으로 열�
 
 ## Angular 빌드하기
 
-- [[**Angular 빌드하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/31/Angular-설치-및-프로젝트-생성&빌드하기/)]
+- [[**Angular 빌드하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/30/angular-deploy-cafe24-02/)]
 
 ## Angular 배포 준비하기
 
-- [[**Angular 배포 준비하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/31/Angular-배포-준비하기/)]
+- [[**Angular 배포 준비하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/31/angular-deploy-cafe24-03/)]
 
 
 ## Git 저장소에 업로드하기
