@@ -11,7 +11,7 @@ tags: ionic app develop frontend
 
 ![design-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-01/design_01.png){: width="400px"}
 
-디자인 관련 내용은 [[여행플랜/디자인](https://wkddnjset.github.io/photoshop/2018/02/02/Phtoshop%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%8A%94-%EC%95%B1%EB%94%94%EC%9E%90%EC%9D%B8-%EC%97%AC%ED%96%89%ED%94%8C%EB%9E%9C/)]에서 확인 하실 수 있습니다.
+디자인 관련 내용은 [[여행플랜/디자인](https://wkddnjset.github.io/photoshop/2018/02/02/ionic3-tourplan-project-01/)]에서 확인 하실 수 있습니다.
 
 ## ionic 프로젝트 생성
 
@@ -112,4 +112,4 @@ export class HomePage {
 
 ## 다음 내용
 
-- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/05/ionic-3-%EC%95%B1-%EA%B0%9C%EB%B0%9C-(%ED%83%AD-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B3%80%EA%B2%BD)-%EC%97%AC%ED%96%89%ED%94%8C%EB%9E%9C/)]
+- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/05/ionic3-tourplan-project-03/)]
