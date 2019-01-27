@@ -15,6 +15,13 @@
   {% include _partials/head.html %}
   <title>{{ title }}</title>
   {% include _third-party/analytics/index.html %}
+  <script src="https://polyfill.webmonetization.org/polyfill.js"></script>
+  <script src="https://cdn.coil.com/donate.js"></script>
+  <script>
+    window.WebMonetizationScripts.donate({
+      paymentPointer: '$twitter.xrttipbot.com/wkddnjset'
+    })
+  </script>
 <meta name="google-site-verification" content="y9S2erY6WWsmYKZDrfKr0zSeohdiNjeiEERPVbshz_g" />
 <meta name="naver-site-verification" content="12005c1a60612f3a3510070ec18a2d7a1553fcab"/>
 </head>
