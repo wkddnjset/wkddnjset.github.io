@@ -22,6 +22,35 @@ tags: djangcms django develop backend
 - 사용할 Provider를 선택할 수 있는 모델 구현
 - Template으로 버튼 구현
 
+## 개발하기
+
+```
+$ mkdir plugin && cd plugin
+$ django-admin startapp allauth_cms
+```
+
+plugin 폴더를 생성 후 allauth_cms라는 이름의 App을 만든다.
+
+```
+project/
+    ...
+    plugin/
+        allauth_cms/
+            templates/
+            __init__.py
+            admin.py
+            apps.py
+            cms_plugins.py
+            models.py
+            tests.py
+            views.py
+        ...
+    ...
+```
+
+App 안에 `templates` 폴더와 `cms_plugins.py` 파일을 생성한다.
+
+cms_plugins.py
 ## CMS 기본  구조
 
 ```
