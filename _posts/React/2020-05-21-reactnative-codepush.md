@@ -1,7 +1,7 @@
 ---
-title: CodePush를 사용해 AppCetner로 안드로이드 배포하기 [RN]
+title: ReactNative CodePush 적용하기
 comments: true
-description: ReactNative 기반으로 작성되었으며, code-push-cli, appcenter를 사용하여 안드로이드를 배포하는 과정을 정리하였습니다.
+description: code-push-cli를 사용하여 ReactNative를 배포하는 과정을 정리하였습니다.
 categories:
   - React
 tags: react react-native appcenter codepush
