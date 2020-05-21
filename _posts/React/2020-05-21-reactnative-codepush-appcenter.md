@@ -11,11 +11,11 @@ tags: react react-native appcenter codepush
 
 - 계정 생성
 
-[AppCenter 홈페이지](https://appcenter.ms/)에서 계정을 생성하고 로그인 합니다.
+[[AppCenter 홈페이지](https://appcenter.ms/)]에서 계정을 생성하고 로그인 합니다.
 
 - 라이브러리 설치하기
 
-> [공식 문서 Getting Started](https://docs.microsoft.com/en-us/appcenter/sdk/getting-started/react-native)
+> [[공식 문서 Getting Started](https://docs.microsoft.com/en-us/appcenter/sdk/getting-started/react-native)]
 
 ```
 $ npm install appcenter appcenter-analytics appcenter-crashes --save-exact
@@ -29,7 +29,8 @@ $ yarn add appcenter appcenter-analytics appcenter-crashes --exact
 
 - 라이브러리 설치
 
-> [code-push github](https://github.com/microsoft/react-native-code-push) > [code-push github #AndroidSetup](https://github.com/microsoft/react-native-code-push/blob/master/docs/setup-android.md)
+1. [[code-push github](https://github.com/microsoft/react-native-code-push)]
+2. [[code-push github #AndroidSetup](https://github.com/microsoft/react-native-code-push/blob/master/docs/setup-android.md)]
 
 ```
 $ npm install --save react-native-code-push
@@ -41,7 +42,7 @@ $ yarn add --save react-native-code-push
 $ yarn global add code-push-cli
 ```
 
-- `android/settings.gradle`
+- `android/settings.gradle` 파일 세팅
 
 > `settings.gradle` 파일 최하단에 아래와 같이 입력해주세요.
 
@@ -52,7 +53,7 @@ include ':app', ':react-native-code-push'
 project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
 ```
 
-- `android/app/build.gradle`
+- `android/app/build.gradle` 파일 세팅
 
 > `Cannot add task ‘bundleDebugJsAndAssets’ as a task with that name already exists.` 에러가 발생하면 apply from: “../../node_modules/react-native/react.gradle” 이 부분은 제거해주세요.
 
@@ -62,7 +63,7 @@ apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 ```
 
-- `android/app/src/.../MainApplication.java`
+- `android/app/src/.../MainApplication.java` 파일 세팅
 
 ```
 ...
