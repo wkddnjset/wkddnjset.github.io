@@ -3,8 +3,8 @@ title: (개발환경) Ubuntu 환경에서 Django 배포하기 - [Django]
 comments: true
 description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정이다.
 categories:
- - Dev
-tags: Dev, Django 
+  - Dev
+tags: Dev, Django
 ---
 
 ## Overview
@@ -15,9 +15,9 @@ Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도
 
 ## 목차
 
-- [Ubuntu 환경에서 Django 배포하기 - [Django]](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)
-- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](http://jangwon.me/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/)
-- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](http://jangwon.me/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/)
+- [Ubuntu 환경에서 Django 배포하기 - [Django]](<http://jangwon.io/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/>)
+- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](<http://jangwon.io/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/>)
+- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](<http://jangwon.io/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/>)
 
 ## Ubuntu 패키지 업데이트
 
@@ -70,6 +70,7 @@ $ sudo groupadd --system Tirrilee-dev
 $ sudo useradd --system --gid Tirrilee-dev --shell /bin/bash --home /Tirrilee-dev/Project Jangwon
 $ sudo passwd Jangwon
 ```
+
 > 여기서 `Project`은 Django 프로젝트 생성시 설정할 프로젝트 이름이다.
 
 ### 프로젝트를 저장할 폴더 생성

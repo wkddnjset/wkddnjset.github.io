@@ -3,23 +3,23 @@ title: 카페24에서 Node.js 서버로 Angular 배포하기
 comments: true
 description: 카페24에서 제공해주는 Node.js 서버를 이용하여 로컬에서 개발한 Angular를 배포하는 방법에 대한 포스팅입니다.
 categories:
- - Angular
+  - Angular
 tags: angular tutorial deploy
 ---
 
 ## 카페24에서 Node.js 서버 구매
 
-* **카페24 호스팅 구매하기 - 서버 선택하기**
+- **카페24 호스팅 구매하기 - 서버 선택하기**
 
 ![Cafe24 Node.js 호스팅-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/cafe24_01.png)
 
-* **카페24 호스팅 구매하기 - 서버 신청하기**
+- **카페24 호스팅 구매하기 - 서버 신청하기**
 
 ![Cafe24 Node.js 호스팅-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/cafe24_02.png)
 
 전 그지 깽꺵이라 제일 싼걸로 신청하겠습니다 ㅠ
 
-* **카페24 호스팅 구매하기 - 서버 결제하기**
+- **카페24 호스팅 구매하기 - 서버 결제하기**
 
 ![Cafe24 Node.js 호스팅-03](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/cafe24_03.png)
 
@@ -27,32 +27,32 @@ tags: angular tutorial deploy
 
 ## Node.js 서버에 앱 생성하기
 
-* **앱 생성하기 - 나의서비스관리**
+- **앱 생성하기 - 나의서비스관리**
 
 ![앱 생성하기-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/app_01.png)
 
 [[카페24 홈페이지](https://www.cafe24.com)]에서 로그인을 하고 **나의서비스관리**에 들어갑니다!!
 
-* **앱 생성하기 - 서버 선택하기**
+- **앱 생성하기 - 서버 선택하기**
 
 ![앱 생성하기-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/app_02.png)
 
 제일 상단에서 구입한 서버를 선택합니다.
 
-* **앱 생성하기 - 메뉴 선택하기**
+- **앱 생성하기 - 메뉴 선택하기**
 
 ![앱 생성하기-03](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/app_03.png)
 
 우측 메뉴에서 **앱 생성/관리**를 선택합니다.
 
-* **앱 생성하기 - 앱 생성하기**
+- **앱 생성하기 - 앱 생성하기**
 
 ![앱 생성하기-04](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/app_04.png)
 
-서버로 배포할 어플리케이션의 이름을 적어주시고 **Node.js 앱 만들기 버튼**을 눌러 앱을 생성합니다. 
+서버로 배포할 어플리케이션의 이름을 적어주시고 **Node.js 앱 만들기 버튼**을 눌러 앱을 생성합니다.
 **<앱이름>.cafe24app.com** 은 배포되는 도메인 입니다. 앱 생성 후 변경이 가능합니다!!
 
-* **앱 생성하기 - 앱 확인하기**
+- **앱 생성하기 - 앱 확인하기**
 
 ![앱 생성하기-05](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/app_05.png)
 
@@ -62,34 +62,34 @@ tags: angular tutorial deploy
 
 ## public key 생성하기
 
-* **[[카페24 public key 생성 가이드 링크](https://help.cafe24.com/cs/cs_manual_view.php?idx=46&page=1&categoryIdx=509&s_key=&s_value=&man_no=1)]**
+- **[[카페24 public key 생성 가이드 링크](https://help.cafe24.com/cs/cs_manual_view.php?idx=46&page=1&categoryIdx=509&s_key=&s_value=&man_no=1)]**
 
-	+ **Git 설치하기**
-		* [[Git 다운로드 링크](https://git-scm.com/downloads)]
+      	+ **Git 설치하기**
+      		* [[Git 다운로드 링크](https://git-scm.com/downloads)]
 
-	+ **Node.js 설치하기**
-		* [[Node.js 다운로드 링크](https://nodejs.org/ko/download/)]
+      	+ **Node.js 설치하기**
+      		* [[Node.js 다운로드 링크](https://nodejs.org/ko/download/)]
 
 > 위 링크를 통해서 Git과 Node.js를 설치해 주세용~
 
-* **ssh public key 생성 - Git 실행하기**
+- **ssh public key 생성 - Git 실행하기**
 
 ![ssh public key-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/ssh_01.png)
 
 검색창에 **`Git Bash`**를 검색해서 실행시켜주세요.
 
-* **ssh public key 생성**
+- **ssh public key 생성**
 
 {% highlight bash linenos %}
 wk647@DESKTOP-ELCDM29 MINGW64 ~
-$ ssh-keygen -t ras -C "contact@jangwon.me"
+\$ ssh-keygen -t ras -C "wkddnjset@naver.com"
 {% endhighlight %}
 
-위 명령어는 ssh public key를 생성하는 명령어 입니다. 뒤에 이메일은 **키 명칭**인데 굳이 이메일이 아니여도 됩니다. 
+위 명령어는 ssh public key를 생성하는 명령어 입니다. 뒤에 이메일은 **키 명칭**인데 굳이 이메일이 아니여도 됩니다.
 
 {% highlight bash linenos %}
 wk647@DESKTOP-ELCDM29 MINGW64 ~
-$ ssh-keygen -t ras -C "contact@jangwon.me"
+\$ ssh-keygen -t ras -C "wkddnjset@naver.com"
 Generating puublic/private rsa key pair.
 Enter file in which to save the key (/c/Users/wk647/.ssh/id_rsa):
 {% endhighlight %}
@@ -126,32 +126,31 @@ Enter passphrase (empty for. no passphrase):
 
 ## public key 등록하기
 
-
-* **ssh public key 등록 - key 복사하기**
+- **ssh public key 등록 - key 복사하기**
 
 ![ssh public key-03](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/register_01.png)
 
 shh key를 저장한 경로에서 **[id_rsa.pub]**파일을 메모장으로 열어서 내용을 `Ctrl+C`합니다.
 
-* **ssh public key 등록 - 메뉴 선택하기**
+- **ssh public key 등록 - 메뉴 선택하기**
 
 ![ssh public key-04](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/register_02.png)
 
 다시 **나의서비스관리**로 가서 우측 상단에 **Public key 관리**메뉴를 선택합니다.
 
-* **ssh public key 등록 - key 등록하기**
+- **ssh public key 등록 - key 등록하기**
 
 ![ssh public key-05](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/register_03.png)
 
 위 이미지처럼 입력 후 **Public key**를 등록해주세요. key 이름은 아무거나 하셔도 됩니다.
 
-* **ssh public key 등록 - key 확인하기**
+- **ssh public key 등록 - key 확인하기**
 
 ![ssh public key-06](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/register_04.png)
 
 **Key 리스트**에서 등록하신 Public key를 확인하실 수 있습니다.
 
-* **ssh public key 등록 - key 할당**
+- **ssh public key 등록 - key 할당**
 
 ![ssh public key-06](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/register_05.png)
 
@@ -168,7 +167,6 @@ shh key를 저장한 경로에서 **[id_rsa.pub]**파일을 메모장으로 열�
 ## Angular 배포 준비하기
 
 - [[**Angular 배포 준비하기** 포스팅 링크](https://wkddnjset.github.io/angular/2018/01/31/angular-deploy-cafe24-03/)]
-
 
 ## Git 저장소에 업로드하기
 
@@ -201,9 +199,3 @@ C:\Users\wk647\Desktop\my_new_project\myapp\deploy> git push origin master
 ![start_app-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-01-30/start_app_02.png)
 
 **앱 상태**가 `처리중`에서 `실행`으로 바뀌면 웹 브라우저에 등록된 도메인을 치면!!! 배포 성공입니다!!
-
-
-
-
-
- 

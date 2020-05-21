@@ -3,8 +3,8 @@ title: (개발환경) Ubuntu 환경에서 Django 배포하기 - [uWSGI]
 comments: true
 description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정이다.
 categories:
- - Dev
-tags: Dev, Django 
+  - Dev
+tags: Dev, Django
 ---
 
 ## Overview
@@ -15,9 +15,9 @@ Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도
 
 ## 목차
 
-- [Ubuntu 환경에서 Django 배포하기 - [Django]](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)
-- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](http://jangwon.me/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/)
-- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](http://jangwon.me/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/)
+- [Ubuntu 환경에서 Django 배포하기 - [Django]](<http://jangwon.io/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/>)
+- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](<http://jangwon.io/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/>)
+- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](<http://jangwon.io/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/>)
 
 ## uWSGI 어플리케이션 서버 설정
 
@@ -43,6 +43,7 @@ Jangwon@ip-172-31-5-231:~$ source bin/activate
 ```bash
 (project_name)Jangwon@ip-172-31-5-231:~$ uwsgi --http :8000 --home <path-to-virtualenv> --chdir <path-to-manage.py-dir> -w <project-name>.wsgi
 ```
+
 > uwsgi --http :8000 --home /Tirrilee-dev/Project/ --chdir /Tirrilee-dev/Project/ -w Rspirit.wsgi
 
 ### uWSGI configuration 파일 생성하기
@@ -52,6 +53,7 @@ Jangwon@ip-172-31-5-231:~$ source bin/activate
 (Rspirit)Jangwon@ip-172-31-5-231:~$ cd conf
 (Rspirit)Jangwon@ip-172-31-5-231:~$ nano uwsgi.ini
 ```
+
 #### uwsgi.ini
 
 > 본인 프로젝트에 맞춰 디렉토리 설정을 바꿔야한다.
@@ -165,8 +167,9 @@ $ sudo chmod 777 /Tirrilee-dev/Project/log
 ```bash
 (Project)Jangwon@ip-172-31-5-231:~$ uwsgi --ini /Tirrilee-dev/Project/conf/uwsgi.ini
 ```
+
 - 에러발생 시
-    - https://stackoverflow.com/questions/21669354/rebuild-uwsgi-with-pcre-support
+  - https://stackoverflow.com/questions/21669354/rebuild-uwsgi-with-pcre-support
 
 > 실제 정상작동 해도 http://[Your-IP]:8000 으로 접속이 불가능하다. Daemon 설정까지 완료한 후 에러를 확인하는게 좋다.
 
@@ -220,7 +223,6 @@ $ sudo service uwsgi start
 ```
 
 **Uwsgi 서비스 상태확인**
-
 
 ```bash
 $ sudo service uwsgi status

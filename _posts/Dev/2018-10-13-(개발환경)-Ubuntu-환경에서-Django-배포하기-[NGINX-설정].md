@@ -3,8 +3,8 @@ title: (개발환경) Ubuntu 환경에서 Django 배포하기 - [NGINX]
 comments: true
 description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정이다.
 categories:
- - Dev
-tags: Dev, Django 
+  - Dev
+tags: Dev, Django
 ---
 
 ## Overview
@@ -15,9 +15,9 @@ Ubuntu 환경에서 Python 3.6을 설치하고 Django 서버를 세팅 해보도
 
 ## 목차
 
-- [Ubuntu 환경에서 Django 배포하기 - [Django]](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)
-- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](http://jangwon.me/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/)
-- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](http://jangwon.me/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/)
+- [Ubuntu 환경에서 Django 배포하기 - [Django]](<http://jangwon.io/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/>)
+- [Ubuntu 환경에서 Django 배포하기 - [uWSGI]](<http://jangwon.io/dev/2018/10/10/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Uwsgi-%EC%84%A4%EC%A0%95/>)
+- [Ubuntu 환경에서 Django 배포하기 - [NGINX]](<http://jangwon.io/dev/2018/10/13/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-NGINX-%EC%84%A4%EC%A0%95/>)
 
 ## uWSGI를 위한 NGINX 세팅하기
 
@@ -32,9 +32,10 @@ $ sudo apt-get install nginx
 > 설치 후 http://[Your-IP] 해당 링크에서 `Welcome to nginx` 페이지를 확인 할 수 있다.
 
 nginx는 2개의 폴더를 갖고 있다. 상황에 따라 두 파일을 수정하기도 하지만, 세팅을 위해 삭제를 하도록 한다.
+
 - `sites-available`
   - 특정 인스턴스의 사용 가능한 모든 사이트에 대한 모든 config 파일을 저장한다.
-- `sites-enabled `
+- `sites-enabled`
   - `sites-available` 폴더에 있는 사이트에 심볼 링크를 저장한다.
 
 ```bash
@@ -61,13 +62,13 @@ server {
     client_max_body_size 128M;
 
     location /static {
-    # exact path to where your static files are located on server 
+    # exact path to where your static files are located on server
     # [mostly you won't need this, as you will be using some storage service for same]
         alias /Tirrilee-dev/Project/static;
     }
 
     location /media {
-    # exact path to where your media files are located on server 
+    # exact path to where your media files are located on server
     # [mostly you won't need this, as you will be using some storage service for same]
         alias /Tirrilee-dev/Project/media;
     }

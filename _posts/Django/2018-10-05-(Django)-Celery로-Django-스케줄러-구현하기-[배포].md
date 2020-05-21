@@ -3,8 +3,8 @@ title: (Django) Celery로 Django 스케줄러 구현하기 - [배포]
 comments: true
 description: Celery와 Celery Beat를 사용해 스케줄러를 구현하고, 이를 배포하는 과정까지 진행해보도록 하겠습니다.
 categories:
- - Django/Study
-tags: Dev, Django 
+  - Django/Study
+tags: Dev, Django
 ---
 
 ## Overview
@@ -23,7 +23,7 @@ tags: Dev, Django
 
 ## 우분투 환경에 배포하기
 
-우분투에 Django가 배포되었다는 가정하에 진행하며, 만약 안되어있을시 [이 곳](http://jangwon.me/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/)을 확인하기 바란다.
+우분투에 Django가 배포되었다는 가정하에 진행하며, 만약 안되어있을시 [이 곳](<http://jangwon.io/dev/2018/10/08/(%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)-Ubuntu-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Django-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-Django-%EC%84%A4%EC%A0%95/>)을 확인하기 바란다.
 
 ### RabbitMQ 설치
 
@@ -125,12 +125,13 @@ celery multi v3.1.24 (Cipater)
 
 #### 실행파일 생성
 
-1. `/etc/init.d/celerybeat ` 파일 생성
+1. `/etc/init.d/celerybeat` 파일 생성
 2. [celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celerybeat)에 내용을 복붙한다.
 
 ```bash
 sudo vi /etc/init.d/celerybeat
 ```
+
 #### Config 파일 생성
 
 Celeryd Config 파일을 생성했기 때문에 따로 Celery Beat Config 파일을 만들필요없다. 혹시 두개의 모듈이 다른 세팅에서 돌아야 한다면, [Docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#init-script-celerybeat)를 참고해서 수정하기 바란다.
