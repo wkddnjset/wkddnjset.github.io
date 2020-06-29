@@ -25,7 +25,7 @@ WebGL은 low-level의 그래픽 프로그래밍을 할 수 있도록 도와주�
 
 WebGL은 HTML Canvas Element에 WebGL Context를 렌더링 한다는 것을 기본 컨셉으로 갖고 있다.
 
-```
+```javascript
 var gl;
 try {
   gl = canvas.getContext("experimental-webgl");
