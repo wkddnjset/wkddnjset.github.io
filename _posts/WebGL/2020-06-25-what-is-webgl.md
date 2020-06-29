@@ -45,4 +45,4 @@ WebGL에서 삼격형을 랜더링하는 건 매우 일반적인 예시이다. c
 
 여러분이 2D 게임을 코딩하고 있다고 가정해보자. 당신이 원하는 것은 직사각형 이미지를 그리는 것이다. WebGL은 삼각형만 그릴 수 있으므로(아래에 자세하게 설명하고 있음) 직사각형을 다음과 같이 두 개의 삼각형으로 분해한다.
 
-![앱 실행](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-06/webgl-rectangle.png){: width="400px", margin="auto"}
+![webgl-rectangle](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2020-06/webgl-rectangle.png){: width="400px", margin="auto"}
