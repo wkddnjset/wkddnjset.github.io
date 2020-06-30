@@ -7,7 +7,9 @@ categories:
 tags: potree, webgl, vision 
 ---
 
-# 목차
+# 아직 작성중 ..
+
+### 목차
 1. 소개
     1.1 동기
     1.2 문제정의

@@ -10,7 +10,9 @@ tags: octree vision webgl vision
 
 > 수억개의 Cloud Point를 렌더링하기 위해 연구된 수 많은 논문 중 [Interactions with Gigantic Point Clouds](https://www.cg.tuwien.ac.at/research/publications/2014/scheiblauer-thesis/)에서 소개된 Modifiable Nested Octree를 정리해 보았다. Potree에서도 동일한 공간 분할 알고리즘을 사용했다고 하여 찾아보게 됨.
 
-# 목차
+# 아직 작성중 ..
+
+### 목차
 1. Modifiable Nested Octree[MNO] 란?
 2. 점 추가하기
 
