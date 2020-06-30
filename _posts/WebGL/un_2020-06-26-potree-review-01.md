@@ -3,8 +3,8 @@ title: Potree 논문 리뷰
 comments: true
 description: Potree 논문 리뷰 입니다.
 categories:
- - potree, webgl, vision
-tags: 
+ - WebGL
+tags: potree, webgl, vision 
 ---
 
 # 목차
