@@ -1,5 +1,5 @@
 ---
-title: Modifiable Nested Octree(MNO) 구조에 대한 정리
+title: Modifiable Nested Octree 구조에 대한 정리
 comments: true
 description: [Interactions with Gigantic Point Clouds] 논문에서 소개된 Modifiable Nested Octree(MNO)에 대해 정리해 보았다.
 categories:
