@@ -1,7 +1,7 @@
 ---
 title: WebGL에 기본적인 컨셉
 comments: true
-description: OpenGL 2.0을 기반으로 만들어진 WebGL에 대한 기본적인 컨셉을 설명하는 외국 블로그의 글을 번역하면서 약간의 수정을 추가했습니다.
+description: OpenGL 2.0을 기반으로 만들어진 WebGL에 대한 기본적인 컨셉을 설명하는 해외 블로그의 글을 번역하면서 약간의 수정을 추가했습니다.
 categories:
  - opengl, webgl
 tags: 
