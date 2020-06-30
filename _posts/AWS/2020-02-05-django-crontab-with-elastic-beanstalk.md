@@ -3,7 +3,7 @@ title: Elastic Beanstalk로 Django Crontab 배포하기
 comments: true
 description: 이번 포스팅에서는 사이드 프로젝트를 하면서 생긴 문제를 해결하는 과정에서 배운 내용을 정리하였으며, Django Crontab을 EB로 배포하는 아주 간단한 방법에 대해서 설명해보려고 합니다.
 categories:
-  - aws
+  - AWS
 tags: backend, elastic-beanstalk, aws, django, crontab, extension
 ---
 
