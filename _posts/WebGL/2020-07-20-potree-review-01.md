@@ -1,11 +1,13 @@
 ---
-title: Potree 논문 리뷰
+title: Potree 논문 번역 및 정리
 comments: true
-description: Potree 논문 리뷰 입니다.
+description: WebGL 기반으로 수백억의 Cloud Point를 다른 응용프로그램 없이 웹에서 렌더링할 수 있는 성과를 보여준 Potree 논문에 대한 번역과 정리를 해봤다.
 categories:
  - WebGL
 tags: potree, webgl, vision 
 ---
+
+> 완벽하게 번역을 하지는 않았고, 중복되는 내용이 많아 꼭 필요한 내용과 추가로 논문을 읽으면서 필요했던 지식들을 잘 정리한 블로그들을 링크로 연결해 놓았다.
 
 # 아직 작성중 ..
 
