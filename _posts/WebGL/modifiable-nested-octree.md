@@ -16,7 +16,7 @@ tags: octree vision webgl vision
 
 ## Modifiable Nested Octree[MNO] 란?
 
-`nested octree`는 외부 메모리(out-of-core)를 통한 point 렌더링을 하기 위한  효율적인 데이터 구조를 갖고 있지만 point를 수정하는 데에 있어 결함이 존재한다. 그 이유는 새로운 point가 추가되거나 삭제될때 마다 재구축되는 octree 가 갖고 있는 특성 때문이다. 또한, octree 내부의 점을 수정한 후에는 hierarchy는 정렬되어져야한다. 위에서 언급 한것 처럼, octree 내부에서 상위 레벨에 저장된 점들은 렌더링 되는 동안 과도한 객체를 생성한다.
+`nested octree`는 외부 메모리(out-of-core)를 통한 point 렌더링을 하기 위한  효율적인 데이터 구조를 갖고 있지만 점을 수정하는 데에 있어 결함이 존재한다. 그 이유는 새로운 점이 추가되거나 삭제될때 마다 재구축되는 octree 가 갖고 있는 특성 때문이다. 또한, octree 내부의 점을 수정한 후에는 hierarchy는 정렬되어져야한다. 위에서 언급 한것 처럼, octree 내부에서 상위 레벨에 저장된 점들은 렌더링 되는 동안 과도한 객체를 생성한다.
 
 이러한 결함을 수용하기 위해, octree 내부를 일반적인 그리드 형태로 재배치하여 hierarchy가 지속적으로 재구축되는 일이 없게 만들수 있다.
 일반 그리드를 사용하는 것은 내부 octree의 상위 레벨을 제거하고 `leaf nodes`만 유지하는 것과 동일하다. hierarchy에 저장된 점들의 변화를 처리하는 기능을 향상하기 위한 새로운 hierarchy는 Modifiable Nested Octree(MNO)라고 부를 것 이다. `Figure 1`에서 `nested octree`와 `MNO`가 각각 어떤 방식으로 점을 저장하는지 보여주고 있다. 
