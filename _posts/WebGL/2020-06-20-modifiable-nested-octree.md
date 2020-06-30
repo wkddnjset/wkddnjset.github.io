@@ -1,11 +1,12 @@
 ---
-title: Modifiable Nested Octree 구조에 대한 정리
+title: Modifiable Nested Octree(MNO) 구조에 대한 정리
 comments: true
-description: "Interactions with Gigantic Point Clouds" 논문에서 소개된 Modifiable Nested Octree(MNO)에 대해 정리해 보았다.
+description: [Interactions with Gigantic Point Clouds] 논문에서 소개된 Modifiable Nested Octree(MNO)에 대해 정리해 보았다.
 categories:
  - WebGL
-tags: octree, vision, webgl, vision 
+tags: octree vision webgl vision 
 ---
+
 
 > 수억개의 Cloud Point를 렌더링하기 위해 연구된 수 많은 논문 중 [Interactions with Gigantic Point Clouds](https://www.cg.tuwien.ac.at/research/publications/2014/scheiblauer-thesis/)에서 소개된 Modifiable Nested Octree를 정리해 보았다. Potree에서도 동일한 공간 분할 알고리즘을 사용했다고 하여 찾아보게 됨.
 
@@ -22,4 +23,4 @@ tags: octree, vision, webgl, vision
 
 ![mno-1](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2020-06/mno-1.png){: width="500px", margin="auto"}
 
-Figure 1: `nested octree`와 `modifiable nested octree(MNO)`의 차이는 점들을 저장하는 방식에 있다.(편의상 1차원으로 정리했다) `nested octree`는 내부 octree에 점을 저장하고(왼쪽), `MNO`는 점을 마지막 노드에 저장한다(오른쪽). 점을 추가하거나 삭제하는 것은 octree가 재구축 되어야하기 때문에, 내부 octree에게 있어서는 비용이 많이 드는 작업이다. 또한 내부 octree에서는 VBO(Vertex Buffer Object)에 점을 매핑하기 위해 일정한 순서를 유지해야한다. 
+> Figure 1: `nested octree`와 `modifiable nested octree(MNO)`의 차이는 점들을 저장하는 방식에 있다.(편의상 1차원으로 정리했다) `nested octree`는 내부 octree에 점을 저장하고(왼쪽), `MNO`는 점을 마지막 노드에 저장한다(오른쪽). 점을 추가하거나 삭제하는 것은 octree가 재구축 되어야하기 때문에, 내부 octree에게 있어서는 비용이 많이 드는 작업이다. 또한 내부 octree에서는 VBO(Vertex Buffer Object)에 점을 매핑하기 위해 일정한 순서를 유지해야한다. 
