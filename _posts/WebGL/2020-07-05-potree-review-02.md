@@ -34,10 +34,24 @@ class EptLoader {
 };
 ```
 
-ept.json 샘플 데이터 예시
+#### ept 데이터 예시 [[Docs](https://entwine.io/entwine-point-tile.html#)] 
 
-> Entwine Point Tile(EPT)는 Octree 기반으로 저장된 Point Cloud 데이터 입니다.
+> Entwine Point Tile(EPT)는 Octree 기반으로 저장된 Point Cloud 데이터 이다. 아래와 같은 구조로 Data 구조가 생성되며, 하나 씩 살펴보도록 하자.
 
+```
+├── ept.json
+├── ept-data
+│   └── 0-0-0-0.laz
+├── ept-hierarchy
+│   └── 0-0-0-0.json
+└── ept-sources
+    ├── list.json
+    └── 0.json
+```
+
+**ept.json**
+
+코드 상에서는 `Potree.PointCloudEptGeometry` 함수를 통해 json 데이터와 url 정보를 받고, 하위에 있는 상세 데이터를 불러오는 듯 하다.
 
 ```json
 {
@@ -56,8 +70,9 @@ ept.json 샘플 데이터 예시
         { "name": "ScanDirectionFlag", "type": "unsigned", "size": 1 },
         ...
     ],
-    // 해상도를 나타내며, 2의 배수여야 함
-    "span" : 256,
+    // octree를 통해 공간을 분할하는 기준, 해상도를 의미하며 2의 배수여야 한다. 
+    "span" : 256, // 256*256*256
+    // spactial reference system의 약자로 좌표계, 공간계 등을 의미한다.
     "srs": {
         "authority": "EPSG",
         "horizontal": "3857",
@@ -67,6 +82,9 @@ ept.json 샘플 데이터 예시
     "version" : "1.0.0"
 }
 ```
+
+**ept-data**
+
 
 ### POCLoader(*.js)
 
