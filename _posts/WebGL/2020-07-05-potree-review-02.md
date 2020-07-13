@@ -68,7 +68,16 @@ class EptLoader {
         { "name": "ReturnNumber", "type": "unsigned", "size": 1 },
         { "name": "NumberOfReturns", "type": "unsigned", "size": 1 },
         { "name": "ScanDirectionFlag", "type": "unsigned", "size": 1 },
-        ...
+        { "name": "EdgeOfFlightLine", "type": "unsigned", "size": 1 },
+        { "name": "Classification", "type": "unsigned", "size": 1 },
+        { "name": "ScanAngleRank", "type": "float", "size": 4 },
+        { "name": "UserData", "type": "unsigned", "size": 1 },
+        { "name": "PointSourceId", "type": "unsigned", "size": 2 },
+        { "name": "GpsTime", "type": "float", "size": 8 },
+        { "name": "Red", "type": "unsigned", "size": 2 },
+        { "name": "Green", "type": "unsigned", "size": 2 },
+        { "name": "Blue", "type": "unsigned", "size": 2 },
+        { "name": "OriginId", "type": "unsigned", "size": 4 }
     ],
     // octree를 통해 공간을 분할하는 기준, 해상도를 의미하며 2의 배수여야 한다. 
     "span" : 256, // 256*256*256
@@ -84,6 +93,54 @@ class EptLoader {
 ```
 
 **ept-data**
+
+Point Cloud의 데이터는 [slippy map](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames) 타일링 구조과 유사하게 구현되었으며 `Zoom-X-Y`의 파일명 구조가 3차원으로 확장되면서 `Depth-X-Y-Z`로 변경되었다.
+
+기본이 되는 데이터는 항상 `0-0-0-0`으로 시작된다. 
+
+**ept-hierarchy**
+
+hierarchy 부분에서는 어떤 위치에 노드들이 존재하며, 얼마나 많은 점들이 포함되어있는지에 대한 정보가 포함되어 있다. 파일 포맷은 Json 이며, `D-X-Y-Z`가 키값으로 point count와 매핑되어있다.
+
+`ept-hierarchy/0-0-0-0.json`
+
+```json
+{
+    "0-0-0-0": 65341,
+        "1-0-0-0": 438,
+            "2-0-1-0": 322,
+        "1-0-0-1": 56209,
+            "2-0-1-2": 4332,
+            "2-1-1-2": 20300,
+            "2-1-1-3": 64020,
+                "3-2-3-6": 32004,
+                    "4-4-6-12": 1500,
+                    "4-5-6-13": 2400,
+                "3-3-3-7": 542,
+        "1-0-1-0": 30390,
+            "2-1-2-0": 2300,
+        "1-1-1-1": 2303
+}
+```
+
+`ept-hierarchy/3-2-3-6.json`
+
+```json
+{
+    "3-2-3-6": 32004,
+        "4-4-6-12": 1500,
+        "4-5-6-13": 2400
+}
+```
+
+
+`ept-hierarchy/3-3-3-7.json`
+
+```json
+{
+    "3-3-3-7": 542
+}
+```
 
 
 ### POCLoader(*.js)
