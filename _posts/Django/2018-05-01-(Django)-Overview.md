@@ -3,7 +3,7 @@ title: (Django) Django Document를 파헤쳐보자.
 comments: true
 description: Django에 대한 이해를 높히기 위해 Django Document에 대한 내용을 정리했습니다.
 categories:
- - Django/Doc
+ - Django
 tags: Django 
 ---
 

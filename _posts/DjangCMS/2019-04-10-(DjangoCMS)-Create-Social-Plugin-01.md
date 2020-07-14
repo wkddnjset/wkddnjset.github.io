@@ -3,7 +3,7 @@ title: (DjangoCMS) 소셜로그인 플러그인 만들기 01
 comments: true
 description: Django CMS 기반의 플러그인을 만들기 위한 과정입니다.
 categories:
- - DjangoCMS/Study
+ - Django
 tags: djangcms django develop backend
 ---
 

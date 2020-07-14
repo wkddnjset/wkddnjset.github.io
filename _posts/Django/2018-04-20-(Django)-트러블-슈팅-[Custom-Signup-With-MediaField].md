@@ -3,7 +3,7 @@ title: (Django) 트러블 슈팅 [Custom Signup with MediaField]
 comments: true
 description: 개인프로젝트를 진행하면서 오류를 해결한 내용을 기록하는 포스팅 입니다. Ask Django에 도움을 받았습니다.
 categories:
- - Django/TroubleShoot
+ - Django
 tags: Django 
 ---
 

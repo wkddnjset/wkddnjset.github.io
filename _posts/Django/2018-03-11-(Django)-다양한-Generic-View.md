@@ -3,7 +3,7 @@ title: (Django) 다양한 Generic View
 comments: true
 description: Ask Django에서 공부한 내용을 정리 했습니다.
 categories:
- - Django/Study
+ - Django
 tags: Django 
 ---
 

@@ -3,7 +3,7 @@ title: (Django) Celery로 Django 스케줄러 구현하기 - [테스트]
 comments: true
 description: Celery와 Celery Beat를 사용해 스케줄러를 구현하고, 이를 배포하는 과정까지 진행해보도록 하겠습니다.
 categories:
- - Django/Study
+ - Django
 tags: Dev, Django 
 ---
 
