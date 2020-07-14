@@ -1,7 +1,7 @@
 ---
-title: Next & Mobx 
+title: Next와 Mobx 정리!
 comments: true
-description: Next.js, Mobx를 사용해 웹을 개발하기 위한 기본 세팅 작업
+description: Next.js와 Mobx를 사용해 웹을 개발하기 위한 기본 세팅 작업 
 categories:
   - React
 tags: react next mobx boilerplate
