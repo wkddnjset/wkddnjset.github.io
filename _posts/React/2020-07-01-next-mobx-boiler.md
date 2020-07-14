@@ -4,7 +4,7 @@ comments: true
 description: Next.js에 대한 이해와 Mobx와 같은 라이브러리들을 사용해 웹을 개발하기 위한 기본 세팅 작업을 boilerplate로 만들어보는 과정에 대한 내용을 정리했습니다.
 categories:
   - React
-tags: react next mobx boilerplate
+tags: react next mobx styled-component boilerplate
 ---
 
 
@@ -12,12 +12,15 @@ tags: react next mobx boilerplate
 
 1. **Next.js 란?**
 2. [Next.js 시작하기](http://jangwon.io/react/2020/07/05/next-mobx-boiler/)
-3. Next.js 라이브러리 세팅
+3. [Next.js 라이브러리 세팅](http://jangwon.io/react/2020/07/10/next-mobx-boiler/)
 4. Mobx 세팅
 5. Todo List 만들어보기
 
 
 ## Next.js 란?
+
+[[Github Project 링크](https://github.com/wkddnjset/next-mobx-boilerplate)]
+
 
 기본적으로는 리액트를 기반으로 한 SPA를 빠르게 빌드할 수 있도록 도와주는 프레임워크 입니다. Next에서는 많은 기능을 제공해주지만 리액트에 대한 기본적인 지식이 있는 상황이라면 `client-side routing`, `page layout` 두가지만 배우면 빠르게 Next를 사용할 수 있습니다.
 
@@ -135,6 +138,7 @@ class Home extend Component {
 
 ## 참고 사이트
 
+- [Next.js 사이트](https://nextjs.org/)
 - [Next.js 필요한 것만 빨리 배우기
 ](https://velog.io/@jakeseo_me/Next.js-%EB%B9%A8%EB%A6%AC-%EB%B0%B0%EC%9A%B0%EA%B8%B0-y0jz9oebn0)
 - [Next.js 제대로 알고 쓰자

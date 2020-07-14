@@ -1,5 +1,5 @@
 ---
-title: Next와 Mobx 정리 - [Next.js 시작하기]
+title: Next와 Mobx 정리 - [Next.js 라이브러리 세팅]
 comments: true
 description: Next.js에 대한 이해와 Mobx와 같은 라이브러리들을 사용해 웹을 개발하기 위한 기본 세팅 작업을 boilerplate로 만들어보는 과정에 대한 내용을 정리했습니다.
 categories:
@@ -11,16 +11,15 @@ tags: react next mobx styled-component boilerplate
 ## 목차
 
 1. [Next.js 란?](http://jangwon.io/react/2020/07/01/next-mobx-boiler/)
-2. **Next.js 시작하기**
-3. [Next.js 라이브러리 세팅](http://jangwon.io/react/2020/07/10/next-mobx-boiler/)
+2. [Next.js 시작하기](http://jangwon.io/react/2020/07/05/next-mobx-boiler/)
+3. **Next.js 라이브러리 세팅**
 4. Mobx 세팅
 5. Todo List 만들어보기
 
 
-## Next.js 시작하기
+## Next.js 라이브러리 세팅
 
 [[Github Project 링크](https://github.com/wkddnjset/next-mobx-boilerplate)]
-
 
 ### 프로젝트 생성
 
@@ -76,44 +75,28 @@ export default Post
 
 `/post/abc`
 
-```json
+```javascript
 { "pid": "abc" }
 ```
 
 `/post/abc?foo=bar`
 
-```json
+```javascript
 { "foo": "bar", "pid": "abc" }
 ```
 
 route 파라미터와 queryString이 같은 경우
 `/post/abc?pid=123`
 
-```json
+```javascript
 { "pid": "abc" }
 ```
 
 `pages/post/[pid]/[comment].js`
 
-```json
+```javascript
 { "pid": "abc", "comment": "a-comment" }
 ```
-
-#### 모든 라우트 불러오기
-
-
-`pages/post/[...slug].js` 파일명을 다음과 같이 만들면, `post/a` 뿐만아니라 `post/a/b` 도 인식한다.
-
-`post/a/b`
-```json
-{ "slug": ["a", "b"] }
-```
-
-### 정리
-
-- `pages/post/create.js` - Will match `/post/create`
-- `pages/post/[pid].js` - Will match `/post/1`, `/post/abc`, etc. But not `/post/create`
-- `pages/post/[...slug].js` - Will match `/post/1/2`, `/post/a/b/c`, etc. But not `/post/create`, `/post/abc`
 
 ## 참고 사이트
 
