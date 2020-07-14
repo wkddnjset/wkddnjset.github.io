@@ -42,3 +42,7 @@ tags: photoshop app design
 
 - [[미니프로젝트 여행플랜 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 - [[ionic 3 사이드메뉴&탭 결합 기본세팅소스](https://github.com/wkddnjset/ionic3-combine-sidemenu-and-tabs)]
+
+## 다음 내용
+
+- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](http://jangwon.io/ionic/2018/02/05/ionic3-tourplan-project-02/)]

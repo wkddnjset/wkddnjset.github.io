@@ -7,6 +7,12 @@ categories:
 tags: ionic app develop frontend
 ---
 
+## 이전 내용
+
+- [[ionic 3 앱 디자인 (여행플랜) 포스팅](http://jangwon.io/ionic/2018/02/03/ionic3-tourplan-project-01/)]
+- [[Github 전체 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
+
+
 ## 디자인
 
 ![design-01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-01/design_01.png){: width="400px"}
@@ -112,4 +118,4 @@ export class HomePage {
 
 ## 다음 내용
 
-- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/05/ionic3-tourplan-project-03/)]
+- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](http://jangwon.io/ionic/2018/02/05/ionic3-tourplan-project-03/)]
