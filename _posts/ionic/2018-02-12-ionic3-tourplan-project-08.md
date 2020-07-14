@@ -3,13 +3,13 @@ title: ionic 3 앱 개발 (Django 모델설계) - [여행플랜/백엔드]
 comments: true
 description: 상품정보의 이미지, 타이틀, 서브타이트르이 데이터를 갖고 있는 API를 Django로 만들어서 ionic과 연동 해보도록 하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: django app develop backend api
 ---
 
 ## 이전 내용
 
-- [[ionic 3 앱 디자인 (여행플랜) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/03/ionic3-tourplan-project-01/)]
+- [[ionic 3 앱 디자인 (여행플랜) 포스팅](http://wkddnjset.github.io/miniproject/tourplan/2018/02/03/ionic3-tourplan-project-01/)]
 - [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/04/ionic3-tourplan-project-02/)]
 - [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/05/ionic3-tourplan-project-03/)]
 - [[ionic 3 앱 개발 (검색바 애니메이션) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/06/ionic3-tourplan-project-04/)]

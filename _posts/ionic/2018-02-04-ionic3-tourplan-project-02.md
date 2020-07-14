@@ -3,7 +3,7 @@ title: ionic 3 앱 개발 (사이드메뉴&amp;탭 결합) - [여행플랜/프�
 comments: true
 description: Photoshop으로 디자인한 안드로이드 UI를 ionic 3를 이용해 프런트 개발을 해보도록하겠습니다. 나눠서 포스팅 할 것이며, 이번 포스팅에서는 사이트메뉴와 탭을 결합하는 방법에 대해 포스팅 하도록하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: ionic app develop frontend
 ---
 

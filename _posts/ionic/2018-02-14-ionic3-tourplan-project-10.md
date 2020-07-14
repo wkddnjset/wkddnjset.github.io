@@ -3,7 +3,7 @@ title: ionic 3 앱 개발 (API 연동하기) - [여행플랜/백엔드]
 comments: true
 description: Django를 통해 로컬로 배포된 API를 ionic을 통해 연결해보도록 하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: django app develop backend api
 ---
 

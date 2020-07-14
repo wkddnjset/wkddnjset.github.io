@@ -3,7 +3,7 @@ title: ionic 3 앱 개발 (Django API 만들기) - [여행플랜/백엔드]
 comments: true
 description: Django에서 설계한 모델을 ionic에서 연동할 수 있도록 RestFul API를 만들어 보도록 하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: django app develop backend api
 ---
 

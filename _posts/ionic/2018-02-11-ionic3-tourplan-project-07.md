@@ -3,7 +3,7 @@ title: ionic 3 앱 개발 (슬라이드) - [여행플랜/프런트]
 comments: true
 description: 이번에는 여행 상품정보를 보여주는 슬라이드를 만들어보도록 하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: ionic app develop frontend
 ---
 

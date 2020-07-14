@@ -3,14 +3,14 @@ title: ionic 3 앱 개발 (탭 아이콘 변경) - [여행플랜/프런트]
 comments: true
 description: zeplin에서 아이콘을 SVG형태로 추출하고, SVG파일을 Font awesome과 같은 아이콘 형태의 폰트로 만들어 ionic에 적용하는 방법에 대한 포스팅입니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: ionic app develop frontend
 ---
 
 ## 이전 내용
 
-- [[ionic 3 앱 디자인 (여행플랜) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/03/ionic3-tourplan-project-01/)]
-- [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/04/ionic3-tourplan-project-02/)]
+- [[ionic 3 앱 디자인 (여행플랜) 포스팅](http://jangwon.io/ionic/2018/02/03/ionic3-tourplan-project-01/)]
+- [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](http://jangwon.io/ionic/2018/02/04/ionic3-tourplan-project-02/)]
 - [[Github 전체 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 
 

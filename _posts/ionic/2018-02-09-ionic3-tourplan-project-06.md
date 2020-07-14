@@ -3,7 +3,7 @@ title: ionic 3 앱 개발 (드롭다운) - [여행플랜/프런트]
 comments: true
 description: 이번에는 PopoverController API를 사용해 Popover(드롭다운) 버튼을 만들어 보도록하겠습니다~
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: ionic app develop frontend
 ---
 
