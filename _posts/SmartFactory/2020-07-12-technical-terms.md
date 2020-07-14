@@ -1,7 +1,7 @@
 ---
 title: 스마트팩토리 용어 정리
 comments: true
-description: Andon(안돈)\n 관리, 유지 보수 및 기타 작업자에게 품질 또는 프로세스를 알리는 시스템. 어떤 워크스테이션에 문제가 있는지 알려주는 신호등을 포함하는 간판인 센터피스(Centerpiece)가 대표적이다.
+description: 스마트팩토리를 타겟으로 진행하는 AR 프로젝트를 준비하는 과정에서 필요한 용어들을 정리해보았습니다.
 categories:
  - SmartFactory
 tags: smartfactory AR AI 

@@ -1,7 +1,7 @@
 ---
 title: Next와 Mobx 정리!
 comments: true
-description: 기본적으로는 리액트를 기반으로 한 SPA를 빠르게 빌드할 수 있도록 도와주는 프레임워크 입니다. Next에서는 많은 기능을 제공해주지만 리액트에 대한 기본적인 지식이 있는 상황이라면 client-side routing, page layout 두가지만 배우면 빠르게 Next를 사용할 수 있습니다.
+description: Next.js에 대한 이해와 Mobx와 같은 라이브러리들을 사용해 웹을 개발하기 위한 기본 세팅 작업을 boilerplate로 만들어보는 과정에 대한 내용을 정리했습니다.
 categories:
   - React
 tags: react next mobx boilerplate
