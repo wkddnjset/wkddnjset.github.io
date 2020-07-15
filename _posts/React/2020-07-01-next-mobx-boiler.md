@@ -28,13 +28,17 @@ tags: react next mobx styled-component boilerplate
 
 ![ssrvscsr](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2020-07/ssrvscsr.png)
 
-먼저 일반적인 React 렌더링 방식은 `render()` 함수가 먼저 실행되고, 그다음에 `ComponentDidMount()` 함수를 통해 데이터를 가져와서 다시 한 번 렌더링이 됩니다. 반면에 `Next`는 `getInitialProps()` 라는 함수를 사용하기 때문에 데이터를 먼저 가져와서 한 번에 렌더링을 해줍니다. 보시다시피 SSR은 한 번에 렌더링이 되기 때문에 초기로딩 속도는 빠르지만, page 이동 시에는 CSR보다 느립니다. 왜냐하면, page를 요청할 때마다 중복되는 파일을 내려받아야 하기 때문입니다. 하지만 CSR은 초기로딩 속도는 느리지만, 첫 페이지 로딩 때 모든 파일을 내려받기 때문에 페이지를 이동할 때마다 해당 페이지에서 필요한 데이터만 불러서 사용하면 됩니다.
+먼저 일반적인 React 렌더링 방식은 `render()` 함수가 먼저 실행되고, 그다음에 `ComponentDidMount()` 함수를 통해 데이터를 가져와서 다시 한 번 렌더링이 됩니다. 반면에 `Next`는 `getInitialProps()` 라는 함수를 사용하기 때문에 데이터를 먼저 가져와서 한 번에 렌더링을 해줍니다. 
+
+이미지에서 `getInitialProps()`는 실제 `page` 단위로 진행하게 되며, 아래 설명할 `코드 스플리팅`으로 해당 기능이 구현되어져 있습니다.(아마도) 그렇기 때문에 page 이동 시에 `getInitialProps()`를 실행하게 되어 CSR보다 느리게 동작할 수 있습니다. CSR은 첫 페이지 로딩 때 모든 파일을 내려받은 다음 페이지 이동시 필요한 데이터만 불러서 사용하기에 초기 로딩 속도는 느리지만 page 이동시 속도가 빠릅니다.
+
+> CSR 에서도 [코드 스플리팅](https://reactjs.org/docs/code-splitting.html)을 구현해서 초기 로딩 속도를 개선할 수 있다. [블로그 참고](https://medium.com/little-big-programming/spa-%EC%B4%88%EA%B8%B0-%EB%A1%9C%EB%94%A9-%EC%86%8D%EB%8F%84-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0-9db137d25566)
 
 ### Next.js의 핵심기능
 
 #### 코드 스플리팅
 
-일반적인 리액트 싱글페이지에서는 초기 렌더링 때 모든 컴포넌트를 내려받습니다. 하지만 규모가 커지고, 용량이 커지면 로딩속도가 지연될 수 있는 문제점이 있습니다. Next는 이러한 문제점을 개선해서 필요에 따라 파일을 불러올 수 있게 여러 개의 파일을 분리하는 `코드 스플리팅`을 사용하였습니다. 폴더 구조를 보시면 `pages 폴더` 안에 각 page 즉, 라우트들이 들어가며, Components 폴더에는 React 컴포넌트들이 들어가게 되는데요. 예를 들어, 브라우저가 실행되고, 사용자가 접속을 하게 되면, 첫 페이지인 `index page`만 불러오게 되고, 그 이후에 다른 페이지로 넘어갔을 때는 해당 페이지만 불러오게 됩니다.
+기존 react는 별도로 [셋업](https://reactjs.org/docs/code-splitting.html)을 해줘야하는 반면  Next는 `코드 스플리팅` 셋업이 되있습니다. 규모가 커지고, 용량이 커지면 로딩속도가 지연될 수 있는 문제점을 개선해서 필요에 따라 파일을 불러올 수 있게 여러 개의 파일로 분리하는 것이 `코드 스플리팅` 입니다. 폴더 구조를 보시면 `pages 폴더` 안에 각 page 즉, 라우트들이 들어가며, Components 폴더에는 React 컴포넌트들이 들어가게 되는데요. 예를 들어, 브라우저가 실행되고, 사용자가 접속을 하게 되면, 첫 페이지인 `index page`만 불러오게 되고, 그 이후에 다른 페이지로 넘어갔을 때는 해당 페이지만 불러오게 됩니다.
 
 #### 간단한 클라이언트 사이드 라우팅 제공
 
@@ -53,7 +57,7 @@ class Home extends Component {
             <div>
 
                 // Link  
-                <Link as={`/book/${this.props.book.id}`} href={`/book/${this.props.book.id}`}>
+                <Link as={`/book/${this.props.book.id}`} href={`/book?id=${this.props.book.id}`}>
                     <div>Book</div>
                 </Link>
 
@@ -67,6 +71,8 @@ class Home extends Component {
 ```
 
 사용방법은 `Router`와 `Link`를 모두 import 해서 사용할 수 있는데요. 먼저 `Link`에서는 href와 as props가 있는데 이 href는 해당 페이지로 이동해 주는 역할을 하고, as는 href의 URL을 조금 더 직관적으로 만들어주는 역할을 해줍니다. `Router`는 링크와 동일하게 해당 페이지로 이동해주는 역할을 하지만 개발자에게 조금 더 제어권을 넘겨줘서 쉽게 `Redirect`도 가능합니다.
+
+> href props는 필수로 입력해야 하며, as는 선택적으로 사용할 수 있다. 위 예제 코드에서 유저가 보게되는 url은 `/book/1` 이지만 Next에서는 `/book?id=1`로 queryString을 받아서 처리할 수 있다.
 
 #### 커스텀 API 서버 (as - 라우트 마스킹)
 
@@ -88,7 +94,6 @@ app
         const queryParams = { id:req.params.id };
         app.render(req, res, actualPage, queryParaams);
     })
-
     ...
 })
 ```
@@ -97,7 +102,9 @@ app
 
 #### getInitialProps()
 
-Next의 핵심기능인 `getInitialProps` 함수를 통해 데이터를 가져올 수 있습니다. 밑에 코드를 보시면 React의 ComponentDidMount 는 렌더링이 두 번 되지만, Next에서는 데이터를 미리 갖고 오기 때문에 `한 번에 렌더링이 가능합니다`.
+Next의 핵심기능인 `getInitialProps` 함수를 통해 데이터를 가져올 수 있습니다. 밑에 코드를 보시면 React의 `componentDidMount`와 setState를 통해 렌더링이 두 번 되지만, Next에서는 데이터를 미리 갖고 오기 때문에 `한 번에 렌더링이 가능합니다`.
+
+> 위에 이미지에서 확인해주세요! 비동기 처리를 통해 `componentDidMount` 한번에 렌더링으로 처리가능하다.
 
 - **React Example**
 
@@ -135,6 +142,19 @@ class Home extend Component {
 }
 ```
 
+- getInitialProps
+  - `getInitialProps`은 서버에서 가져온 데이터를 `props`로 넘기는 비동기 함수입니다.
+  - 항상 서버에서 동작하며, 만약 페이지가 `<Link>`를 사용하여 호출된다면 클라이언트측에서만 호출됩니다. (라우트마스킹을 해줘야함)
+  - `getInitialProps`을 부모 컴포넌트에서 진행했을 때, 자식 컴포넌트에서 사용할 수 없다. [참고](https://github.com/vercel/next.js/issues/159#issuecomment-257318970)
+
+- componentDidMount
+  - `page` 뿐만아니라 `component`에서도 사용할 수 있습니다. 
+  - `async/await`을 사용해서 `getInitialProps`와 유사하게 사용되어질 수 있습니다.
+  
+`getInitialProps` 와 `componentDidMount` 을 적재적소에 사용하는 것은 어려움이 있으며, [여기](https://stackoverflow.com/questions/47461803/next-js-componentwillmount-vs-getinitialprops)에서는 아래 방식으로 하고 있다고 합니다.
+
+- `page`에서 데이터를 불러와서 props로 사용하게 될 경우 `getInitialProps`을 사용
+- 자식 컴포넌트 혹은 `state`를 업데이트 하는 API를 호출하게 될 경우 `componentDidMount` 사용
 
 ## 참고 사이트
 

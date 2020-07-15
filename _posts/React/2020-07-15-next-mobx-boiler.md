@@ -68,12 +68,12 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 export default MyApp;
 ```
 
-저는 `Mobx Provider`에 대한 세팅, `global CSS`에 대한 설정, `ScrollToTop` 컴포넌트를 이용해 페이지 이동시 스크롤 이동에 대한 컨트롤을 커스텀 하였습니다.
+저는 `Mobx Provider`, `global CSS`에 대한 설정, `ScrollToTop` 컴포넌트를 이용해 페이지 이동시 스크롤 이동에 대한 컨트롤을 커스텀 하였습니다.
 
 
 ###  `Document` 커스텀
 
-`Document` 커스텀은 `<html>`과 `<body>` 태그를 커스텀 할때 대부분 사용 됩니다. 해당 기능이 필요한 이유는 Next.js page는 주변 파일들에서 정의한 마크업을 무시하기 때문입니다.
+`Document` 커스텀은 `<html>`과 `<body>` 태그를 커스텀 할때 대부분 사용 됩니다. 해당 기능이 필요한 이유는 Next.js page는 주변 파일들에서 정의한 `마크업`을 무시하기 때문 이라고 합니다.
 
 또한 `getInitialProps` 기능을 포함하고 있어 비동기로 서버사이드 렌더링된 데이터를 불러올때 사용됩니다.
 
@@ -136,7 +136,7 @@ Document.getInitialProps = async ({ renderPage }) => {
 export default Document;
 ```
 
-저는 `styled-component`에서 적용된 스타일들을 `getInitialProps`를 사용해서 페이지가 로드되기전에 서버에서 해당 데이터를 불러와서 스타일적용을 시키기 위해서 `Document` 커스텀을 사용했습니다.
+저는 `styled-component`에서 적용된 스타일들을 `getInitialProps`를 사용해서 페이지가 로드되기 전에 서버에서 해당 데이터를 불러와서 스타일적용을 시키기 위해서 `Document` 커스텀을 사용했습니다.
 
 
 ## 참고 사이트
