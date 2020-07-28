@@ -14,7 +14,7 @@ tags: react next mobx styled-component boilerplate
 2. [Next.js 시작하기](http://jangwon.io/react/2020/07/05/next-mobx-boiler/)
 3. **Next.js 라이브러리 설치 및 Bebel 세팅**
 4. [Next.js app & document 커스텀](http://jangwon.io/react/2020/07/15/next-mobx-boiler/)
-5. Todo List 만들어보기
+5. [Todo List 만들어보기](http://jangwon.io/react/2020/07/20/next-mobx-boiler/)
 
 
 ## Next.js 라이브러리 세팅
