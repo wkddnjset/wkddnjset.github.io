@@ -3,15 +3,15 @@ title: ionic 3 앱 개발 (검색바 애니메이션) - [여행플랜/프런트]
 comments: true
 description: ionic에서 사용하는 web-animations-js 모듈을 설치하여 검색 버튼을 누르면 검색바가 애니메이션되는 방법에 대한 내용을 포스팅하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: ionic app develop frontend
 ---
 
 ## 이전 내용
 
-- [[ionic 3 앱 디자인 (여행플랜) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/03/ionic3-tourplan-project-01/)]
-- [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/04/ionic3-tourplan-project-02/)]
-- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/05/ionic3-tourplan-project-03/)]
+- [[ionic 3 앱 디자인 (여행플랜) 포스팅](http://jangwon.io/ionic/2018/02/03/ionic3-tourplan-project-01/)]
+- [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](http://jangwon.io/ionic/2018/02/04/ionic3-tourplan-project-02/)]
+- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](http://jangwon.io/ionic/2018/02/05/ionic3-tourplan-project-03/)]
 - [[Github 전체 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 
 ![result-02](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-05/result_02.png){: width="400px"}
@@ -150,4 +150,4 @@ import { trigger, style, state, transition, animate } from '@angular/core';
 
 ## 다음 내용
 
-- [[ionic 3 앱 개발 (다양한 애니메이션) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/07/ionic3-tourplan-project-05)]
+- [[ionic 3 앱 개발 (다양한 애니메이션) 포스팅](http://jangwon.io/ionic/2018/02/07/ionic3-tourplan-project-05)]

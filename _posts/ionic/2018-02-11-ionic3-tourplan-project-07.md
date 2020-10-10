@@ -3,18 +3,18 @@ title: ionic 3 앱 개발 (슬라이드) - [여행플랜/프런트]
 comments: true
 description: 이번에는 여행 상품정보를 보여주는 슬라이드를 만들어보도록 하겠습니다.
 categories:
- - MiniProject/TourPlan
+ - Ionic
 tags: ionic app develop frontend
 ---
 
 ## 이전 내용
 
-- [[ionic 3 앱 디자인 (여행플랜) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/03/ionic3-tourplan-project-01/)]
-- [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/04/ionic3-tourplan-project-02/)]
-- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/05/ionic3-tourplan-project-03/)]
-- [[ionic 3 앱 개발 (검색바 애니메이션) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/06/ionic3-tourplan-project-04/)]
-- [[ionic 3 앱 개발 (다양한 애니메이션) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/07/ionic3-tourplan-project-05/)]
-- [[ionic 3 앱 개발 (드롭다운) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/09/ionic3-tourplan-project-06/)]
+- [[ionic 3 앱 디자인 (여행플랜) 포스팅](http://jangwon.io/ionic/2018/02/03/ionic3-tourplan-project-01/)]
+- [[ionic 3 앱 개발 (사이드메뉴&탭 결합) 포스팅](http://jangwon.io/ionic/2018/02/04/ionic3-tourplan-project-02/)]
+- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](http://jangwon.io/ionic/2018/02/05/ionic3-tourplan-project-03/)]
+- [[ionic 3 앱 개발 (검색바 애니메이션) 포스팅](http://jangwon.io/ionic/2018/02/06/ionic3-tourplan-project-04/)]
+- [[ionic 3 앱 개발 (다양한 애니메이션) 포스팅](http://jangwon.io/ionic/2018/02/07/ionic3-tourplan-project-05/)]
+- [[ionic 3 앱 개발 (드롭다운) 포스팅](http://jangwon.io/ionic/2018/02/09/ionic3-tourplan-project-06/)]
 - [[Github 전체 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 
 ![Result_01](https://raw.githubusercontent.com/wkddnjset/wkddnjset.github.io/master/_posts/images/2018-02-09/result_01.gif)
@@ -103,4 +103,4 @@ tags: ionic app develop frontend
 
 ## 다음 내용
 
-- [[ionic 3 앱 개발 (Django 모델설계) 포스팅](https://wkddnjset.github.io/miniproject/tourplan/2018/02/12/ionic3-tourplan-project-08)]
+- [[ionic 3 앱 개발 (Django 모델설계) 포스팅](http://jangwon.io/ionic/2018/02/12/ionic3-tourplan-project-08)]

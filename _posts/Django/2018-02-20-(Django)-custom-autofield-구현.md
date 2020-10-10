@@ -3,7 +3,7 @@ title: (Django) 모델에서 Custom AutoField 구현
 comments: true
 description: Django 모델에서 Field의 default 값을 설정 해줌으로서 AutoField를 구현하는 과정에서 생긴 문제 및 질문과 해결 방벙에 대한 포스팅입니다.
 categories:
- - Django/Study
+ - Django
 tags: django develop 
 ---
 

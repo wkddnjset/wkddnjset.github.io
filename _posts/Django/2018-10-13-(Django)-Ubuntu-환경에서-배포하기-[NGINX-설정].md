@@ -3,8 +3,13 @@ title: (개발환경) Ubuntu 환경에서 Django 배포하기 - [NGINX]
 comments: true
 description: Amazone EC2에서 생성한 Ubuntu 환경에서 uWSGI, NGINX를 사용해 배포하는 과정이다.
 categories:
+<<<<<<< HEAD:_posts/Django/2018-10-13-(Django)-Ubuntu-환경에서-배포하기-[NGINX-설정].md
   - Django
 tags: Django
+=======
+  - OS
+tags: OS Django Ubuntu
+>>>>>>> a7e8e2d36ebcbd013b91f1ddc518c6b5f12d27f0:_posts/OS/2018-10-13-(개발환경)-Ubuntu-환경에서-Django-배포하기-[NGINX-설정].md
 ---
 
 ## Overview

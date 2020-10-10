@@ -1,9 +1,9 @@
- ---
+---
 title: Photoshop으로하는 앱디자인 - [여행플랜/디자인]
 comments: true
 description: 스터디를 하기위해 프로젝트 팀을 만들었습니다. 팀원분들 중 한분이 기획하신 자유여행 계획을 세워주는 어플리케이션을 개발하기로 하였고, 시간이 남아서 비슷한 느낌으로 메인페이지를 한번 디자인 해봤습니다.
 categories:
- - MiniProject/TourPlan
+ - ionic
 tags: photoshop app design
 ---
 
@@ -42,3 +42,7 @@ tags: photoshop app design
 
 - [[미니프로젝트 여행플랜 소스코드](https://github.com/wkddnjset/MiniProject-TourPlan)]
 - [[ionic 3 사이드메뉴&탭 결합 기본세팅소스](https://github.com/wkddnjset/ionic3-combine-sidemenu-and-tabs)]
+
+## 다음 내용
+
+- [[ionic 3 앱 개발 (탭 아이콘 변경) 포스팅](http://jangwon.io/ionic/2018/02/05/ionic3-tourplan-project-02/)]
