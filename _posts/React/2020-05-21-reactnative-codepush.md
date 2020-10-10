@@ -130,7 +130,12 @@ $ code-push release-react <appName> android -d Staging [or Production]
 $ code-push release-react Metime/android android -d Staging
 ```
 
+### 참고
+
+- [브런치](https://medium.com/@gale.lee/react-native-code-push-3-237b8c4360d7)
+
 <!-- ## AppCenter 세팅하기
+
 
 - 라이브러리 설치하기
 
@@ -185,6 +190,6 @@ $ appcenter login
 
 - 배포
 
-```
+````
 $ appcenter codepush release-react -a Metime/android -d Staging [or Production]
-``` -->
+````
