@@ -3,8 +3,8 @@ title: (React) Jest & Enzyme를 사용한 TDD 개발
 comments: true
 description: 테스트 주도 개발(TDD)를 통해 Navbar 컴포넌트 개발해보기
 categories:
- - React
-tags: React, TDD, Jest, Enzyme 
+  - React
+tags: React, TDD, Jest, Enzyme
 ---
 
 ## Overview
@@ -71,14 +71,14 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
 - react-navbar/src → 테스트 코드와 컴포넌트를 개발
 - react-navbar/src/Navbar → Navbar 컴포넌트를 위한 폴더 생성
 - react-navbar/example → 개발된 컴포넌트를 불러와서 사용
-    - `import <ComponentName> from <ProjectName>` 다음과 같이 사용한다.
-    - 예 : `import Component from 'react-navbar'`
+  - `import <ComponentName> from <ProjectName>` 다음과 같이 사용한다.
+  - 예 : `import Component from 'react-navbar'`
 
 ### 테스트 및 실행 방법
 
 - 루트 디렉토리(react-navbar/)에서 `yarn test` 또는 `npm test`를 하면 테스트 코드를 실행할 수 있다.
-    - 특정 컴포넌트에 대한 test 코드만 실행 `Navbar를 test 코드를 실행하는 예제`
-        - `yarn test src/Navbar` or `npm test src/Navbar`
+  - 특정 컴포넌트에 대한 test 코드만 실행 `Navbar를 test 코드를 실행하는 예제`
+    - `yarn test src/Navbar` or `npm test src/Navbar`
 - `react-navbar/example` 에서 `yarn start` 또는 `npm start`를 통해 실제 컴포넌트를 사용하는 예제를 실행할 수 있다.
 
 ## Navbar Component 시나리오
@@ -109,7 +109,7 @@ TDD 개발은 기본적으로 아래 프로세스로 진행됩니다.
 
 - 지금은 간단한 테스트를 위해 두가지 시나리오에 대한 테스트만 진행하도록 하겠습니다.
 
-## TestCode  작성하기
+## TestCode 작성하기
 
 ### install enzyme
 
@@ -130,36 +130,35 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
     import Navbar from './Navbar'
     import { shallow, configure } from 'enzyme';
     import Adapter from 'enzyme-adapter-react-16';
-    
+
     configure({ adapter: new Adapter() });
 ```
 
-우선 테스트 코드를 작성에 필요한, enzyme 라이브러리를 세팅을 합니다. 그리고 테스트를 진행할 컴포넌트(Navbar)를 import 합니다. 
+우선 테스트 코드를 작성에 필요한, enzyme 라이브러리를 세팅을 합니다. 그리고 테스트를 진행할 컴포넌트(Navbar)를 import 합니다.
 
 ```javascript
-
-    describe('Navbar 컴포넌트', () => {
-      describe('사용자는 Navbar를 생성할 수 있다.', () => {
-        it(`설정없이 Navbar를 생성하면,
+describe("Navbar 컴포넌트", () => {
+  describe("사용자는 Navbar를 생성할 수 있다.", () => {
+    it(`설정없이 Navbar를 생성하면,
             default 속성을 가진 Navbar를 생성한다.`, () => {
-            // Test Code
-          })
-        it(`expand, position, bgColor, textColor를 설정하고 Navbar를 생성하면, 
+      // Test Code
+    });
+    it(`expand, position, bgColor, textColor를 설정하고 Navbar를 생성하면, 
             설정된 expand, position, bgColor, textColor를 가진 Navbar를 생성한다.`, () => {
-            // Test Code
-          })
-      })
-      describe('사용자는 ToggleNav버튼으로 메뉴를 toggle 시킬 수 있다.', () => {
-        it(`state가 false인 상태에서 ToggleNav를 클릭하면,
+      // Test Code
+    });
+  });
+  describe("사용자는 ToggleNav버튼으로 메뉴를 toggle 시킬 수 있다.", () => {
+    it(`state가 false인 상태에서 ToggleNav를 클릭하면,
             state가 true로 바뀌며, 메뉴가 보여진다.`, () => {
-            // Test Code
-          })
-          it(`state가 true인 상태에서 ToggleNav를 클릭하면,
+      // Test Code
+    });
+    it(`state가 true인 상태에서 ToggleNav를 클릭하면,
               state가 false로 바뀌며, 메뉴가 사라진다.`, () => {
-            // Test Code
-          })
-      })
-    })
+      // Test Code
+    });
+  });
+});
 ```
 
 앞서 작성한 시나리오 맞춰 `describe`을 작성한 다음 `Test Code`를 작성합니다.
@@ -190,28 +189,25 @@ React Component에 접근하기 위해 `enzyme` 라이브러리를 설치합니�
 ### src/Navbar.js
 
 ```javascript
-    import React, { Component } from 'react'
-    
-    export default class Navbar extends Component {
-      constructor(props) {
-        super(props);
-    
-        this.state = {
-          expand:'md',
-          position:null,
-          bgColor:'rgb(240,240,240)',
-          textColor:'rbg(100,100,100)',
-          isOpen:false,
-        };
-      }
-    
-      render() {
-        return (
-          <div id="Navbar">
-          </div>
-        )
-      }
-    }
+import React, { Component } from "react";
+
+export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      expand: "md",
+      position: null,
+      bgColor: "rgb(240,240,240)",
+      textColor: "rbg(100,100,100)",
+      isOpen: false,
+    };
+  }
+
+  render() {
+    return <div id="Navbar"></div>;
+  }
+}
 ```
 
 ## Reference
